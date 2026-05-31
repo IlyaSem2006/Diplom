@@ -1,0 +1,925 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="hero-section mb-5">
+    <div class="hero-content text-center">
+        <h1 class="hero-title animate-fade-in">
+            <i class="fas fa-plus-circle hero-icon"></i> 
+            Добавить еду в дневник
+        </h1>
+        <p class="hero-subtitle animate-fade-in-delay">
+            <i class="fas fa-calendar-alt"></i> Выберите продукты и их количество
+        </p>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-lg-10 col-xl-8">
+        <div class="modern-form-card">
+            <div class="form-card-header">
+                <div class="form-icon-wrapper">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <div class="form-title-section">
+                    <h4 class="form-title">Новая запись в дневнике</h4>
+                    <p class="form-subtitle">Добавьте один или несколько продуктов</p>
+                </div>
+                <button type="button" class="btn btn-add-product" onclick="addProductRow()">
+                    <i class="fas fa-plus"></i> Еще продукт
+                </button>
+            </div>
+            <div class="form-card-body">
+                <form method="POST" id="add-food-form">
+                    <!-- Общие параметры -->
+                    <div class="row mb-4">
+                        <div class="col-lg-6 mb-3">
+                            <label for="meal_type" class="modern-label">
+                                <i class="fas fa-clock label-icon"></i> Прием пищи *
+                            </label>
+                            <select class="modern-select" name="meal_type" required>
+                                <option value="">Выберите прием пищи</option>
+                                <option value="завтрак">🌅 Завтрак</option>
+                                <option value="обед">🌞 Обед</option>
+                                <option value="ужин">🌙 Ужин</option>
+                                <option value="перекус">🍪 Перекус</option>
+                            </select>
+                        </div>
+                        
+                        <div class="col-lg-6 mb-3">
+                            <label for="date" class="modern-label">
+                                <i class="fas fa-calendar-alt label-icon"></i> Дата *
+                            </label>
+                            <input type="date" class="modern-input" name="date" 
+                                   value="{{ today }}" required>
+                        </div>
+                    </div>
+                    
+                    <!-- Продукты -->
+                    <div class="products-section mb-4">
+                        <div class="section-header">
+                            <div class="section-title-wrapper">
+                                <i class="fas fa-utensils section-icon"></i>
+                                <h6 class="section-title">Продукты</h6>
+                            </div>
+                            <button type="button" class="btn btn-add-item" onclick="addProductRow()">
+                                <i class="fas fa-plus"></i> Добавить продукт
+                            </button>
+                        </div>
+                        <div class="products-container" id="products-container">
+                            <!-- Первый продукт -->
+                            <div class="product-item" data-index="0">
+                                <div class="product-card">
+                                    <div class="product-card-header">
+                                        <span class="product-number">1</span>
+                                        <span class="product-title">Продукт</span>
+                                        <button type="button" class="btn-remove" onclick="removeProductRow(this)" style="display: none;">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                    <div class="product-card-body">
+                                        <div class="row">
+                                            <div class="col-lg-7 mb-3">
+                                                <label class="modern-label">
+                                                    <i class="fas fa-apple-alt label-icon"></i> Название продукта *
+                                                </label>
+                                                <select class="modern-select product-select" name="product_id[]" required>
+                                                    <option value="">Выберите продукт</option>
+                                                    {% for product in products %}
+                                                    <option value="{{ product.id }}" 
+                                                            data-calories="{{ product.calories_per_100g }}"
+                                                            data-protein="{{ product.protein }}"
+                                                            data-fat="{{ product.fat }}"
+                                                            data-carbs="{{ product.carbs }}"
+                                                            data-category="{{ product.category }}"
+                                                            {% if selected_product_id == product.id %}selected{% endif %}>
+                                                        {{ product.name }} ({{ product.category }})
+                                                    </option>
+                                                    {% endfor %}
+                                                </select>
+                                            </div>
+                                            
+                                            <div class="col-lg-5 mb-3">
+                                                <label class="modern-label">
+                                                    <i class="fas fa-weight label-icon"></i> Вес (грамм) *
+                                                </label>
+                                                <div class="weight-input-wrapper">
+                                                    <input type="number" class="modern-input weight-input" name="weight[]" 
+                                                           step="0.1" min="0.1" required placeholder="100">
+                                                    <span class="input-unit">г</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Предварительный расчет для этого продукта -->
+                                        <div class="nutrition-preview" style="display: none;">
+                                            <div class="nutrition-preview-card">
+                                                <div class="nutrition-grid">
+                                                    <div class="nutrition-item calories">
+                                                        <i class="fas fa-fire"></i>
+                                                        <span class="value">0</span>
+                                                        <span class="unit">ккал</span>
+                                                    </div>
+                                                    <div class="nutrition-item protein">
+                                                        <i class="fas fa-dumbbell"></i>
+                                                        <span class="value">0</span>
+                                                        <span class="unit">г белков</span>
+                                                    </div>
+                                                    <div class="nutrition-item fat">
+                                                        <i class="fas fa-tint"></i>
+                                                        <span class="value">0</span>
+                                                        <span class="unit">г жиров</span>
+                                                    </div>
+                                                    <div class="nutrition-item carbs">
+                                                        <i class="fas fa-bread-slice"></i>
+                                                        <span class="value">0</span>
+                                                        <span class="unit">г углеводов</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <!-- Общий расчет -->
+                    <div class="total-nutrition-section mb-4" id="total-nutrition" style="display: none;">
+                        <div class="total-nutrition-card">
+                            <div class="nutrition-header">
+                                <h6 class="nutrition-title">
+                                    <i class="fas fa-calculator"></i> Общая пищевая ценность
+                                </h6>
+                            </div>
+                            <div class="nutrition-summary">
+                                <div class="nutrition-stat calories-stat">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-fire"></i>
+                                    </div>
+                                    <div class="stat-value">
+                                        <span class="value" id="total-calories">0</span>
+                                        <span class="unit">ккал</span>
+                                    </div>
+                                </div>
+                                <div class="nutrition-stat protein-stat">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-dumbbell"></i>
+                                    </div>
+                                    <div class="stat-value">
+                                        <span class="value" id="total-protein">0</span>
+                                        <span class="unit">г белков</span>
+                                    </div>
+                                </div>
+                                <div class="nutrition-stat fat-stat">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-tint"></i>
+                                    </div>
+                                    <div class="stat-value">
+                                        <span class="value" id="total-fat">0</span>
+                                        <span class="unit">г жиров</span>
+                                    </div>
+                                </div>
+                                <div class="nutrition-stat carbs-stat">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-bread-slice"></i>
+                                    </div>
+                                    <div class="stat-value">
+                                        <span class="value" id="total-carbs">0</span>
+                                        <span class="unit">г углеводов</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-submit" id="submit-btn" disabled>
+                            <i class="fas fa-plus"></i> Добавить <span id="product-count">0</span> продуктов в дневник
+                        </button>
+                        <a href="{{ url_for('index') }}" class="btn btn-cancel">
+                            <i class="fas fa-times"></i> Отмена
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Поиск продуктов (автодополнение) -->
+<div class="modal fade" id="productSearchModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Поиск продуктов</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <input type="text" class="form-control mb-3" id="product-search" 
+                       placeholder="Введите название продукта...">
+                <div id="search-results"></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<style>
+/* Modern Add Food Page Styles */
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    padding: 40px 30px;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.hero-icon {
+    font-size: 3rem;
+    margin-right: 15px;
+    animation: pulse 2s infinite;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 0;
+}
+
+/* Modern Form Card */
+.modern-form-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden;
+    border: none;
+}
+
+.form-card-header {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    padding: 30px;
+    border-bottom: 1px solid #dee2e6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.form-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.form-title-section {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.form-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.form-subtitle {
+    color: #6c757d;
+    margin: 5px 0 0 0;
+    font-size: 0.9rem;
+}
+
+.btn-add-product {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+.btn-add-product:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+    color: white;
+}
+
+.form-card-body {
+    padding: 40px;
+}
+
+/* Modern Form Elements */
+.modern-label {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.label-icon {
+    margin-right: 8px;
+    color: #6c757d;
+    width: 16px;
+}
+
+.modern-input, .modern-select {
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+    width: 100%;
+}
+
+.modern-input:focus, .modern-select:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    outline: none;
+}
+
+.weight-input-wrapper {
+    position: relative;
+}
+
+.input-unit {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+    font-weight: 600;
+    pointer-events: none;
+}
+
+/* Products Section */
+.products-section {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 25px;
+    border: 2px dashed #dee2e6;
+    transition: all 0.3s ease;
+}
+
+.products-section:hover {
+    border-color: #667eea;
+    background: #f0f4ff;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.section-title-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.section-icon {
+    font-size: 1.2rem;
+    color: #667eea;
+    margin-right: 10px;
+}
+
+.section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.btn-add-item {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-add-item:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+    color: white;
+}
+
+/* Product Items */
+.product-item {
+    margin-bottom: 25px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    border-color: #667eea;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.product-card-header {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product-number {
+    background: rgba(255,255,255,0.2);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.product-title {
+    font-weight: 600;
+    flex: 1;
+    margin-left: 15px;
+}
+
+.btn-remove {
+    background: rgba(220, 53, 69, 0.9);
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.btn-remove:hover {
+    background: #dc3545;
+    transform: scale(1.1);
+}
+
+.product-card-body {
+    padding: 25px;
+}
+
+/* Nutrition Preview */
+.nutrition-preview-card {
+    background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 20px;
+    border-left: 4px solid #667eea;
+}
+
+.nutrition-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+}
+
+.nutrition-item {
+    text-align: center;
+    padding: 10px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 8px;
+}
+
+.nutrition-item i {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.nutrition-item.calories i { color: #ff6b6b; }
+.nutrition-item.protein i { color: #4ecdc4; }
+.nutrition-item.fat i { color: #45b7d1; }
+.nutrition-item.carbs i { color: #96ceb4; }
+
+.nutrition-item .value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2c3e50;
+    display: block;
+}
+
+.nutrition-item .unit {
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+/* Total Nutrition Section */
+.total-nutrition-section {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.total-nutrition-card {
+    color: white;
+}
+
+.nutrition-header {
+    padding: 20px 30px;
+    background: rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.nutrition-title {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+.nutrition-title i {
+    margin-right: 10px;
+    font-size: 1.3rem;
+}
+
+.nutrition-summary {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.nutrition-stat {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.nutrition-stat:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+}
+
+.stat-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.stat-value .value {
+    font-size: 2rem;
+    font-weight: 700;
+    display: block;
+    line-height: 1;
+}
+
+.stat-value .unit {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-submit {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+}
+
+.btn-submit:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+    color: white;
+}
+
+.btn-submit:disabled {
+    background: #6c757d;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+.btn-cancel {
+    background: #6c757d;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-cancel:hover {
+    background: #5a6268;
+    color: white;
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+/* Animations */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease forwards;
+}
+
+.animate-fade-in-delay {
+    animation: fadeIn 1s ease 0.3s forwards;
+    opacity: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-icon {
+        font-size: 2.5rem;
+    }
+    
+    .form-card-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .form-title-section {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+    
+    .nutrition-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .btn-submit, .btn-cancel {
+        width: 100%;
+    }
+}
+</style>
+
+<script>
+let productRowIndex = 1;
+
+document.addEventListener('DOMContentLoaded', function() {
+    updateTotalNutrition();
+    updateSubmitButton();
+    
+    // Добавляем обработчики для первого продукта
+    attachProductRowHandlers(document.querySelector('.product-item'));
+    
+    // Добавляем глобальные обработчики для отслеживания изменений
+    document.addEventListener('change', function(e) {
+        if (e.target.matches('.product-select') || e.target.matches('.weight-input')) {
+            updateSubmitButton();
+        }
+    });
+    
+    document.addEventListener('input', function(e) {
+        if (e.target.matches('.weight-input')) {
+            updateSubmitButton();
+        }
+    });
+});
+
+function addProductRow() {
+    const container = document.getElementById('products-container');
+    const newRow = document.createElement('div');
+    newRow.className = 'product-item';
+    newRow.setAttribute('data-index', productRowIndex);
+    
+    // Клонируем первую строку продукта и очищаем значения
+    const firstRow = document.querySelector('.product-item');
+    const clonedRow = firstRow.cloneNode(true);
+    
+    // Очищаем значения в клонированной строке
+    const productSelect = clonedRow.querySelector('.product-select');
+    const weightInput = clonedRow.querySelector('.weight-input');
+    const nutritionPreview = clonedRow.querySelector('.nutrition-preview');
+    const productNumber = clonedRow.querySelector('.product-number');
+    
+    productSelect.selectedIndex = 0; // Сбрасываем на "Выберите продукт"
+    weightInput.value = '';
+    nutritionPreview.style.display = 'none';
+    productNumber.textContent = productRowIndex + 1;
+    
+    // Показываем кнопку удаления
+    const deleteBtn = clonedRow.querySelector('.btn-remove');
+    deleteBtn.style.display = 'flex';
+    
+    // Обновляем индекс
+    clonedRow.setAttribute('data-index', productRowIndex);
+    
+    container.appendChild(clonedRow);
+    attachProductRowHandlers(clonedRow);
+    
+    productRowIndex++;
+    updateSubmitButton();
+    
+    // Показываем кнопки удаления если больше одного продукта
+    updateDeleteButtons();
+}
+
+function removeProductRow(button) {
+    const row = button.closest('.product-item');
+    row.remove();
+    updateTotalNutrition();
+    updateSubmitButton();
+    updateDeleteButtons();
+    updateProductNumbers();
+}
+
+function updateProductNumbers() {
+    const items = document.querySelectorAll('.product-item');
+    items.forEach((item, index) => {
+        const numberElement = item.querySelector('.product-number');
+        if (numberElement) {
+            numberElement.textContent = index + 1;
+        }
+    });
+}
+
+function updateDeleteButtons() {
+    const rows = document.querySelectorAll('.product-item');
+    const deleteButtons = document.querySelectorAll('.product-item .btn-remove');
+    
+    deleteButtons.forEach(btn => {
+        btn.style.display = rows.length > 1 ? 'flex' : 'none';
+    });
+}
+
+function attachProductRowHandlers(row) {
+    const productSelect = row.querySelector('.product-select');
+    const weightInput = row.querySelector('.weight-input');
+    const nutritionPreview = row.querySelector('.nutrition-preview');
+    
+    function updateRowNutrition() {
+        const selectedOption = productSelect.options[productSelect.selectedIndex];
+        const weight = parseFloat(weightInput.value) || 0;
+        
+        if (selectedOption.value && weight > 0) {
+            const calories = parseFloat(selectedOption.dataset.calories) || 0;
+            const protein = parseFloat(selectedOption.dataset.protein) || 0;
+            const fat = parseFloat(selectedOption.dataset.fat) || 0;
+            const carbs = parseFloat(selectedOption.dataset.carbs) || 0;
+            
+            const factor = weight / 100;
+            
+            nutritionPreview.querySelector('.calories .value').textContent = Math.round(calories * factor);
+            nutritionPreview.querySelector('.protein .value').textContent = (protein * factor).toFixed(1);
+            nutritionPreview.querySelector('.fat .value').textContent = (fat * factor).toFixed(1);
+            nutritionPreview.querySelector('.carbs .value').textContent = (carbs * factor).toFixed(1);
+            
+            nutritionPreview.style.display = 'block';
+        } else {
+            nutritionPreview.style.display = 'none';
+        }
+        
+        updateTotalNutrition();
+        updateSubmitButton();
+    }
+    
+    productSelect.addEventListener('change', updateRowNutrition);
+    weightInput.addEventListener('input', updateRowNutrition);
+}
+
+function updateTotalNutrition() {
+    let totalCalories = 0;
+    let totalProtein = 0;
+    let totalFat = 0;
+    let totalCarbs = 0;
+    
+    document.querySelectorAll('.product-item').forEach(row => {
+        const productSelect = row.querySelector('.product-select');
+        const weightInput = row.querySelector('.weight-input');
+        const selectedOption = productSelect.options[productSelect.selectedIndex];
+        const weight = parseFloat(weightInput.value) || 0;
+        
+        if (selectedOption.value && weight > 0) {
+            const calories = parseFloat(selectedOption.dataset.calories) || 0;
+            const protein = parseFloat(selectedOption.dataset.protein) || 0;
+            const fat = parseFloat(selectedOption.dataset.fat) || 0;
+            const carbs = parseFloat(selectedOption.dataset.carbs) || 0;
+            
+            const factor = weight / 100;
+            
+            totalCalories += calories * factor;
+            totalProtein += protein * factor;
+            totalFat += fat * factor;
+            totalCarbs += carbs * factor;
+        }
+    });
+    
+    const totalNutrition = document.getElementById('total-nutrition');
+    
+    if (totalCalories > 0) {
+        document.getElementById('total-calories').textContent = Math.round(totalCalories);
+        document.getElementById('total-protein').textContent = totalProtein.toFixed(1);
+        document.getElementById('total-fat').textContent = totalFat.toFixed(1);
+        document.getElementById('total-carbs').textContent = totalCarbs.toFixed(1);
+        
+        totalNutrition.style.display = 'block';
+    } else {
+        totalNutrition.style.display = 'none';
+    }
+}
+
+function updateSubmitButton() {
+    const rows = document.querySelectorAll('.product-item');
+    let validProducts = 0;
+    
+    rows.forEach(row => {
+        const productSelect = row.querySelector('.product-select');
+        const weightInput = row.querySelector('.weight-input');
+        
+        if (productSelect.value && weightInput.value && parseFloat(weightInput.value) > 0) {
+            validProducts++;
+        }
+    });
+    
+    const submitBtn = document.getElementById('submit-btn');
+    
+    submitBtn.disabled = validProducts === 0;
+    
+    if (validProducts === 0) {
+        submitBtn.innerHTML = '<i class="fas fa-plus"></i> Добавить 0 продуктов в дневник';
+    } else if (validProducts === 1) {
+        submitBtn.innerHTML = '<i class="fas fa-plus"></i> Добавить 1 продукт в дневник';
+    } else {
+        submitBtn.innerHTML = `<i class="fas fa-plus"></i> Добавить ${validProducts} продуктов в дневник`;
+    }
+    
+    console.log('Valid products count:', validProducts); // Для отладки
+}
+</script>
+{% endblock %}

@@ -1,0 +1,788 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="hero-section mb-5">
+    <div class="hero-content text-center">
+        <h1 class="hero-title animate-fade-in">
+            <i class="fas fa-user-circle hero-icon"></i> 
+            Профиль пользователя
+        </h1>
+        <p class="hero-subtitle animate-fade-in-delay">
+            <i class="fas fa-cog"></i> Настройте свои параметры для точного расчета калорий
+        </p>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-xl-10 col-lg-12">
+        <div class="row justify-content-center">
+            <!-- Основная форма -->
+            <div class="{{ 'col-lg-8' if profile else 'col-lg-8 col-xl-6' }} mb-4">
+                <div class="profile-form-card">
+                    <div class="form-card-header">
+                        <div class="form-icon-wrapper">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                        <div class="form-title-section">
+                            <h4 class="form-title">Настройки профиля</h4>
+                            <p class="form-subtitle">Заполните данные для расчета нормы калорий</p>
+                        </div>
+                    </div>
+                    
+                    <div class="form-card-body">
+                        <form method="POST">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="name" class="modern-label">
+                                        <i class="fas fa-user label-icon"></i> Имя *
+                                    </label>
+                                    <input type="text" class="modern-input" name="name" id="name" 
+                                           value="{{ profile.name if profile else '' }}" required
+                                           placeholder="Ваше имя">
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <label for="age" class="modern-label">
+                                        <i class="fas fa-birthday-cake label-icon"></i> Возраст *
+                                    </label>
+                                    <input type="number" class="modern-input" name="age" id="age" 
+                                           value="{{ profile.age if profile else '' }}" 
+                                           min="1" max="120" required
+                                           placeholder="Возраст в годах">
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="gender" class="modern-label">
+                                        <i class="fas fa-venus-mars label-icon"></i> Пол *
+                                    </label>
+                                    <select class="modern-select" name="gender" id="gender" required>
+                                        <option value="">Выберите пол</option>
+                                        <option value="male" {{ 'selected' if profile and profile.gender == 'male' else '' }}>
+                                            Мужской
+                                        </option>
+                                        <option value="female" {{ 'selected' if profile and profile.gender == 'female' else '' }}>
+                                            Женский
+                                        </option>
+                                    </select>
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <label for="weight" class="modern-label">
+                                        <i class="fas fa-weight label-icon"></i> Вес (кг) *
+                                    </label>
+                                    <div class="weight-input-wrapper">
+                                        <input type="number" class="modern-input" name="weight" id="weight" 
+                                               value="{{ profile.weight if profile else '' }}" 
+                                               step="0.1" min="20" max="300" required
+                                               placeholder="Текущий вес">
+                                        <span class="input-unit">кг</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="height" class="modern-label">
+                                        <i class="fas fa-ruler-vertical label-icon"></i> Рост (см) *
+                                    </label>
+                                    <div class="height-input-wrapper">
+                                        <input type="number" class="modern-input" name="height" id="height" 
+                                               value="{{ profile.height if profile else '' }}" 
+                                               min="100" max="250" required
+                                               placeholder="Рост в сантиметрах">
+                                        <span class="input-unit">см</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <label for="activity_level" class="modern-label">
+                                        <i class="fas fa-running label-icon"></i> Уровень активности *
+                                    </label>
+                                    <select class="modern-select" name="activity_level" id="activity_level" required>
+                                        <option value="">Выберите уровень</option>
+                                        <option value="sedentary" {{ 'selected' if profile and profile.activity_level == 'sedentary' else '' }}>
+                                            💼 Малоподвижный (офисная работа)
+                                        </option>
+                                        <option value="light" {{ 'selected' if profile and profile.activity_level == 'light' else '' }}>
+                                            🚶 Легкая активность (1-3 тренировки в неделю)
+                                        </option>
+                                        <option value="moderate" {{ 'selected' if profile and profile.activity_level == 'moderate' else '' }}>
+                                            🚴 Умеренная активность (3-5 тренировок в неделю)
+                                        </option>
+                                        <option value="active" {{ 'selected' if profile and profile.activity_level == 'active' else '' }}>
+                                            🏃 Высокая активность (6-7 тренировок в неделю)
+                                        </option>
+                                        <option value="very_active" {{ 'selected' if profile and profile.activity_level == 'very_active' else '' }}>
+                                            🏋️ Очень высокая активность (2 тренировки в день)
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="goal" class="modern-label">
+                                    <i class="fas fa-bullseye label-icon"></i> Цель *
+                                </label>
+                                <select class="modern-select" name="goal" id="goal" required>
+                                    <option value="">Выберите цель</option>
+                                    <option value="lose" {{ 'selected' if profile and profile.goal == 'lose' else '' }}>
+                                        🎯 Похудение (дефицит калорий)
+                                    </option>
+                                    <option value="maintain" {{ 'selected' if profile and profile.goal == 'maintain' else '' }}>
+                                        ⚖️ Поддержание веса
+                                    </option>
+                                    <option value="gain" {{ 'selected' if profile and profile.goal == 'gain' else '' }}>
+                                        💪 Набор массы (профицит калорий)
+                                    </option>
+                                </select>
+                            </div>
+                            
+                            {% if profile and profile.target_calories %}
+                            <div class="calorie-info-card">
+                                <div class="calorie-icon">
+                                    <i class="fas fa-calculator"></i>
+                                </div>
+                                <div class="calorie-content">
+                                    <h6 class="calorie-title">Рекомендуемая норма калорий</h6>
+                                    <div class="calorie-value">{{ profile.target_calories }} ккал/день</div>
+                                    <p class="calorie-note">
+                                        Расчет основан на формуле Миффлина-Сан Жеора с учетом вашей активности и цели.
+                                    </p>
+                                </div>
+                            </div>
+                            {% endif %}
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-save">
+                                    <i class="fas fa-save"></i> Сохранить профиль
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Статистика профиля -->
+            {% if profile %}
+            <div class="col-lg-4 mb-4">
+                <div class="stats-card">
+                    <div class="stats-header">
+                        <h5 class="stats-title">
+                            <i class="fas fa-chart-pie"></i> Ваша статистика
+                        </h5>
+                    </div>
+                    <div class="stats-grid">
+                        {% set bmi = profile.weight / ((profile.height/100) ** 2) %}
+                        <div class="stat-item bmi">
+                            <div class="stat-icon">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <div class="stat-value">{{ "%.1f"|format(bmi) }}</div>
+                            <div class="stat-label">ИМТ</div>
+                            <div class="stat-interpretation">
+                                {% if bmi < 18.5 %}
+                                    <span class="status underweight">Недостаточный вес</span>
+                                {% elif bmi < 25 %}
+                                    <span class="status normal">Нормальный вес</span>
+                                {% elif bmi < 30 %}
+                                    <span class="status overweight">Избыточный вес</span>
+                                {% else %}
+                                    <span class="status obesity">Ожирение</span>
+                                {% endif %}
+                            </div>
+                        </div>
+                        
+                        <div class="stat-item calories">
+                            <div class="stat-icon">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <div class="stat-value">{{ profile.target_calories }}</div>
+                            <div class="stat-label">ккал/день</div>
+                        </div>
+                        
+                        <div class="stat-item age">
+                            <div class="stat-icon">
+                                <i class="fas fa-birthday-cake"></i>
+                            </div>
+                            <div class="stat-value">{{ profile.age }}</div>
+                            <div class="stat-label">лет</div>
+                        </div>
+                        
+                        <div class="stat-item weight">
+                            <div class="stat-icon">
+                                <i class="fas fa-weight"></i>
+                            </div>
+                            <div class="stat-value">{{ profile.weight }}</div>
+                            <div class="stat-label">кг</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        
+        <!-- Информация о расчетах -->
+        <div class="info-cards-grid">
+            <div class="info-card formula-card">
+                <div class="info-card-header">
+                    <h5 class="info-title">
+                        <i class="fas fa-calculator"></i> Как рассчитываются калории?
+                    </h5>
+                </div>
+                <div class="info-card-body">
+                    <p>Мы используем формулу Миффлина-Сан Жеора для расчета базового метаболизма:</p>
+                    
+                    <div class="formulas-grid">
+                        <div class="formula-item male">
+                            <h6><i class="fas fa-mars"></i> Для мужчин:</h6>
+                            <div class="formula-code">BMR = 10 × вес + 6.25 × рост - 5 × возраст + 5</div>
+                        </div>
+                        <div class="formula-item female">
+                            <h6><i class="fas fa-venus"></i> Для женщин:</h6>
+                            <div class="formula-code">BMR = 10 × вес + 6.25 × рост - 5 × возраст - 161</div>
+                        </div>
+                    </div>
+                    
+                    <p class="mt-3">Затем BMR умножается на коэффициент активности и корректируется в зависимости от цели:</p>
+                    <div class="goals-list">
+                        <div class="goal-item lose">
+                            <i class="fas fa-arrow-down"></i>
+                            <strong>Похудение:</strong> -500 ккал от TDEE
+                        </div>
+                        <div class="goal-item maintain">
+                            <i class="fas fa-minus"></i>
+                            <strong>Поддержание:</strong> TDEE без изменений
+                        </div>
+                        <div class="goal-item gain">
+                            <i class="fas fa-arrow-up"></i>
+                            <strong>Набор массы:</strong> +500 ккал к TDEE
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<style>
+/* Modern Profile Page Styles */
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    padding: 40px 30px;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.hero-icon {
+    font-size: 3rem;
+    margin-right: 15px;
+    animation: pulse 2s infinite;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 0;
+}
+
+/* Profile Form Card */
+.profile-form-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden;
+    border: none;
+    margin: 0 auto; /* Center the form card */
+}
+
+.form-card-header {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    padding: 30px;
+    border-bottom: 1px solid #dee2e6;
+    display: flex;
+    align-items: center;
+}
+
+.form-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #28a745, #20c997);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    margin-right: 20px;
+}
+
+.form-title-section {
+    flex: 1;
+}
+
+.form-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.form-subtitle {
+    color: #6c757d;
+    margin: 5px 0 0 0;
+    font-size: 0.9rem;
+}
+
+.form-card-body {
+    padding: 40px;
+}
+
+/* Modern Form Elements */
+.modern-label {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.label-icon {
+    margin-right: 8px;
+    color: #6c757d;
+    width: 16px;
+}
+
+.modern-input, .modern-select {
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+    width: 100%;
+}
+
+.modern-input:focus, .modern-select:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1);
+    outline: none;
+}
+
+.weight-input-wrapper, .height-input-wrapper {
+    position: relative;
+}
+
+.input-unit {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+    font-weight: 600;
+    pointer-events: none;
+}
+
+/* Calorie Info Card */
+.calorie-info-card {
+    background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    border-left: 4px solid #28a745;
+}
+
+.calorie-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #28a745, #20c997);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.calorie-content {
+    flex: 1;
+}
+
+.calorie-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0 0 5px 0;
+}
+
+.calorie-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #28a745;
+    margin-bottom: 5px;
+}
+
+.calorie-note {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin: 0;
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.btn-save {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+}
+
+.btn-save:hover {
+    background: linear-gradient(135deg, #218838, #1fa180);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+}
+
+/* Stats Card */
+.stats-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden;
+    height: 100%;
+}
+
+.stats-header {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 25px;
+}
+
+.stats-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.stats-title i {
+    margin-right: 10px;
+    font-size: 1.4rem;
+}
+
+.stats-grid {
+    padding: 25px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.stat-item {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.stat-item:hover {
+    background: #e9ecef;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.stat-item.bmi {
+    border-color: #667eea;
+}
+
+.stat-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    margin: 0 auto 15px;
+}
+
+.stat-item.calories .stat-icon {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+}
+
+.stat-item.age .stat-icon {
+    background: linear-gradient(135deg, #4ecdc4, #44a08d);
+}
+
+.stat-item.weight .stat-icon {
+    background: linear-gradient(135deg, #45b7d1, #96c93d);
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #6c757d;
+    font-weight: 600;
+}
+
+.stat-interpretation {
+    margin-top: 10px;
+}
+
+.status {
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.status.underweight {
+    background: #cce5ff;
+    color: #0066cc;
+}
+
+.status.normal {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status.overweight {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.status.obesity {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* Info Cards */
+.info-cards-grid {
+    margin-top: 30px;
+}
+
+.info-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.info-card-header {
+    background: linear-gradient(135deg, #20c997, #17a2b8);
+    color: white;
+    padding: 25px;
+}
+
+.info-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.info-title i {
+    margin-right: 10px;
+    font-size: 1.4rem;
+}
+
+.info-card-body {
+    padding: 30px;
+}
+
+.formulas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.formula-item {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 20px;
+    border-left: 4px solid;
+}
+
+.formula-item.male {
+    border-left-color: #007bff;
+}
+
+.formula-item.female {
+    border-left-color: #e83e8c;
+}
+
+.formula-item h6 {
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.formula-item h6 i {
+    margin-right: 8px;
+}
+
+.formula-code {
+    background: #343a40;
+    color: #f8f9fa;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    overflow-x: auto;
+}
+
+.goals-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.goal-item {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    border-left: 4px solid;
+}
+
+.goal-item.lose {
+    border-left-color: #dc3545;
+}
+
+.goal-item.maintain {
+    border-left-color: #6c757d;
+}
+
+.goal-item.gain {
+    border-left-color: #28a745;
+}
+
+.goal-item i {
+    margin-right: 12px;
+    font-size: 1.1rem;
+    width: 20px;
+    color: #6c757d;
+}
+
+/* Animations */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease forwards;
+}
+
+.animate-fade-in-delay {
+    animation: fadeIn 1s ease 0.3s forwards;
+    opacity: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-icon {
+        font-size: 2.5rem;
+    }
+    
+    .form-card-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .form-icon-wrapper {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .formulas-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-card-body {
+        padding: 25px;
+    }
+    
+    .stats-grid {
+        padding: 20px;
+    }
+    
+    /* Better centering for mobile */
+    .profile-form-card {
+        max-width: 100%;
+        margin: 0;
+    }
+}
+
+/* Better centering for larger screens when no sidebar */
+@media (min-width: 992px) {
+    .col-xl-6.col-lg-8 {
+        max-width: 66.666667%;
+        margin: 0 auto;
+        float: none;
+    }
+}
+</style>
+{% endblock %}
