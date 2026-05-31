@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map id="cc-keys" xml:lang="ru">
+
+    <!-- Аббревиатура КТК для шапки титульного листа и задания-->
+    <keydef keys="key_prod_KTK_abbrev">
+        <topicmeta>
+            <keywords>
+                <keyword>КТК ФГБОУ ВО «КНИТУ»</keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+
+    <!-- Наименование КТК для шапки титульного листа и задания-->
+    <keydef keys="key_prod_KTK_Name">
+        <topicmeta>
+            <keywords>
+                <keyword>Казанский технологический колледж</keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+    
+    <!-- Год издания-->
+    <keydef keys="key_prod_year">
+        <topicmeta>
+            <keywords>
+                <keyword>2026 г.</keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+
+    <!-- Год издания-->
+    <keydef keys="key_prod_dateblank">
+        <topicmeta>
+            <keywords>
+                <keyword>«____» _________________</keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+    
+    <!-- ФИО студента в именительном падеже -->
+    <keydef keys="key_prodStudentFIO_imen">
+        <topicmeta>
+            <keywords>
+                <keyword>Семенов Илья Дмитриевич</keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+
+    <!-- ФИО студента в родительном падеже -->
+    <keydef keys="key_prodStudentFIO_rod">
+        <topicmeta>
+            <keywords>
+                <keyword>Семенова Ильи Дмитриевича</keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+    
+    <!-- Инициалы и фаамилия студента в родительном падеже -->
+    <keydef keys="key_prodStudentInitials_rod">
+        <topicmeta>
+            <keywords>
+                <keyword>И.Д. Семенова</keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+    
+    <!-- Инициалы и фаамилия студента в родительном падеже -->
+    <keydef keys="key_prodStudentInitials_imen">
+        <topicmeta>
+            <keywords>
+                <keyword>И.Д. Семенов</keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+
+    <!-- Специальность студента -->
+    <keydef keys="key_prodStudentSpeciality">
+        <topicmeta>
+            <keywords>
+                <keyword>09.02.07 Информационные системы и программирование</keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+
+    <!-- Номер группы студента -->
+    <keydef keys="key_prodStudentGroup">
+        <topicmeta>
+            <keywords>
+                <keyword>09.07.22</keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+    
+    <!-- Тема работы -->
+    <keydef keys="key_prodTheme">
+        <topicmeta>
+            <keywords>
+                <keyword>Создание приложения для отслеживания питания и расчета КБЖУ</keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+
+    <!-- Нормоконтролер дипломной работы -->
+    <keydef keys="key_prodApprover">
+        <topicmeta>
+            <keywords>
+                <keyword><!-- Укажи ФИО нормоконтролера вместо этого комментария --></keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+
+    <!-- Руководитель дипломной работы -->
+    <keydef keys="key_prodSupervisor">
+        <topicmeta>
+            <keywords>
+                <keyword><!-- Укажи ФИО руководителя вместо этого комментария --></keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+ 
+    <keydef keys="key_topic_underconstruction" href="./cc-under-construction.dita"/>
+    
+ 
+</map>

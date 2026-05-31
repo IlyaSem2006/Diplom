@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Инициализация индивидуальных настроек сборки продукта. Подключаются автоматически в главный билд-файл newbuild.xml -->
+<project name="initbuild">
+  <!-- Назначаем свой XSL-файл формирования нижнего колонтитула в DOCX -->
+  <property name="footer.xsl" location="${basedir}/xsl/org.rcrekb.docx.mod/docx/word/kzn.footer.xsl"/>
+
+  <!-- Назначаем свой XSL-файл основного document.xsl, чтоы уже из него импортировать свой XSL-для с темплейтом для заголовка приложения) -->
+  <!--property name="document.xsl" location="${basedir}/xsl/org.rcrekb.docx.mod/docx/word/kzn.document.xsl"/-->
+
+  <!-- Отключаем (NO) название перекрестной ссылки, оставляя только номер -->
+  <property name="org.dita.link_title.view" value="NO"/>
+</project>
+

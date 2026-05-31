@@ -1,0 +1,132 @@
+<project name="CC" default="docx" basedir=".">
+    <taskdef resource="net/sf/antcontrib/antlib.xml"/>
+    <property environment="env"/>
+    <property name="ditadir" location="${env.DITA_DIR}"/>
+    <property name="product" value="cc"/>
+	<record name="${env.TEMP}/${product}.log" action="start" append="false"/>
+    <!-- Define the tool folder in the user profile to store log and temporary files -->
+    <property name="tool.dir" location="${env.APPDATA}/${ant.project.name}"/>
+    <mkdir dir="${tool.dir}"/>
+
+    <!-- Папка подключаемого DTD-каталога при генерации DITA-топиков стандарта 1.3 -->
+    <xmlcatalog id="dita13">
+        <catalogpath>
+            <fileset dir="${ditadir}/plugins/org.oasis-open.dita.v1_3/dtd" includes="**/catalog.xml"/>
+        </catalogpath>
+    </xmlcatalog>
+        
+	<target name="-ps" description="Автозапуск vba-макроса постобработки word">
+		<!--входной параметр ${fdocm}-->
+		<echo message="Start word-macro in ${fdocm}. Git revision ${git.revision}"/>
+		<exec dir="${basedir}/../tools/scripts" executable="powershell.exe">
+		  <arg line="-ExecutionPolicy unrestricted -File .\runmacro.ps1 ${fdocm} ${git.revision}"/>
+		</exec>
+		<delete file="${fdocm}.docm"/>
+	</target>
+
+    <target name="docx">
+		<property name="dotx.file" location="${basedir}/xsl/org.docx.mod/docx/resources/base_Normal.docx"/>
+	    <property name="footer.xsl" location="${basedir}/xsl/org.docx.mod/docx/word/otzyv.footer.xsl"/>
+	    <property name="document.xsl" location="${basedir}/xsl/org.docx.mod/docx/word/ktk.document.xsl"/>
+        <ant antfile="${ditadir}/build.xml">
+            <property name="args.input" value="cc.ditamap"/>
+            <property name="transtype" value="docx"/>
+            <property name="output.dir" value="${basedir}/out"/>
+            <property name="args.filter" value="cc.ditaval"/>
+            <property name="args.gen.task.lbl" value="YES"/>
+            <property name="args.grammar.cache" value="YES"/>
+            <property name="clean.temp" value="yes"/>
+            <property name="args.docx.macros" value="NO"/>
+            <property name="args.docx.button" value="NO"/>
+            <property name="args.dita.link_title.view" value="YES"/>
+            <property name="org.dita.toc.level" value="5"/>
+            <!--property name="args.rellinks" value="all"/-->
+
+            <!--property name="customization.dir" value="PluginCustom"/-->
+            <!--property name="processing-mode" value="strict"/-->
+            <!--property name="org.dita.index.skip" value="yes"/-->
+        </ant>
+	    <!-- Автозапуск vba-макроса постобработки DOCM -->
+    	<!--antcall target="-ps">
+	      <param name="fdocm" value="${basedir}/out/${product}"/>
+	    </antcall-->
+
+    </target>
+    <target name="zadanie">
+		<property name="dotx.file" location="${basedir}/xsl/org.docx.mod/docx/resources/base_Normal.docx"/>
+        <ant antfile="${ditadir}/build.xml">
+            <property name="args.input" value="cc_zadanie.ditamap"/>
+            <property name="transtype" value="docx"/>
+            <property name="output.dir" value="${basedir}/out"/>
+            <property name="args.filter" value="cc.ditaval"/>
+            <property name="args.gen.task.lbl" value="YES"/>
+            <property name="args.grammar.cache" value="YES"/>
+            <property name="clean.temp" value="yes"/>
+            <property name="args.docx.macros" value="NO"/>
+            <property name="args.docx.button" value="NO"/>
+            <property name="args.dita.link_title.view" value="YES"/>
+            <property name="org.dita.toc.level" value="5"/>
+            <!--property name="args.rellinks" value="all"/-->
+
+            <!--property name="customization.dir" value="PluginCustom"/-->
+            <!--property name="processing-mode" value="strict"/-->
+            <!--property name="org.dita.index.skip" value="yes"/-->
+        </ant>
+
+    </target>
+
+    <target name="norm">
+		<property name="dotx.file" location="${basedir}/xsl/org.docx.mod/docx/resources/base_Normal.docx"/>
+        <ant antfile="${ditadir}/build.xml">
+            <property name="args.input" value="cc_norm.ditamap"/>
+            <property name="transtype" value="docx"/>
+            <property name="output.dir" value="${basedir}/out"/>
+            <property name="args.filter" value="cc.ditaval"/>
+            <property name="args.gen.task.lbl" value="YES"/>
+            <property name="args.grammar.cache" value="YES"/>
+            <property name="clean.temp" value="yes"/>
+            <property name="args.docx.macros" value="NO"/>
+            <property name="args.docx.button" value="NO"/>
+            <property name="args.dita.link_title.view" value="YES"/>
+            <property name="org.dita.toc.level" value="5"/>
+            <!--property name="args.rellinks" value="all"/-->
+
+            <!--property name="customization.dir" value="PluginCustom"/-->
+            <!--property name="processing-mode" value="strict"/-->
+            <!--property name="org.dita.index.skip" value="yes"/-->
+        </ant>
+	    <!-- Автозапуск vba-макроса постобработки DOCM -->
+    	<!--antcall target="-ps">
+	      <param name="fdocm" value="${basedir}/out/cc_norm"/>
+	    </antcall-->
+
+    </target>
+
+    <target name="otzyv">
+    	<!-- Назначаем свой XSL-файл формирования нижнего колонтитула в DOCX -->
+	    <property name="footer.xsl" location="${basedir}/xsl/org.docx.mod/docx/word/otzyv.footer.xsl"/>
+	    <property name="header1.xsl" location="${basedir}/xsl/org.docx.mod/docx/word/otzyv.header1.xsl"/>
+		<property name="dotx.file" location="${basedir}/xsl/org.docx.mod/docx/resources/base_Normal.docx"/>
+
+        <ant antfile="${ditadir}/build.xml">
+            <property name="args.input" value="cc_otzyv.ditamap"/>
+            <property name="transtype" value="docx"/>
+            <property name="output.dir" value="${basedir}/out"/>
+            <property name="args.filter" value="cc.ditaval"/>
+            <property name="args.gen.task.lbl" value="YES"/>
+            <property name="args.grammar.cache" value="YES"/>
+            <property name="clean.temp" value="yes"/>
+            <property name="args.docx.macros" value="NO"/>
+            <property name="args.docx.button" value="NO"/>
+            <property name="args.dita.link_title.view" value="YES"/>
+            <property name="org.dita.toc.level" value="5"/>
+            <!--property name="args.rellinks" value="all"/-->
+
+            <!--property name="customization.dir" value="PluginCustom"/-->
+            <!--property name="processing-mode" value="strict"/-->
+            <!--property name="org.dita.index.skip" value="yes"/-->
+        </ant>
+
+    </target>
+
+</project>

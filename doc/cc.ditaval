@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<val>
+  <prop action="exclude" att="product" val="draft"/>
+  <prop action="exclude" att="product" val="original"/>
+  <prop action="include" att="product" val="variant1"/>
+</val>

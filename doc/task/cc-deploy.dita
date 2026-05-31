@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA General Task//EN" "generaltask.dtd">
+<task id="CC-CEL" xml:lang="ru">
+  <title>Развёртывание и конфигурация</title>
+  <taskbody>
+    <context>Для развертывания приложения на render.com:</context>
+    <steps>
+      <step>
+        <cmd>Зарегистрируйтесь на <xref href="https://render.com" scope="external" format="html">https://render.com</xref></cmd>
+      </step>
+      <step>
+        <cmd>Создайте PostgreSQL базу</cmd>
+      </step>
+      <step>
+        <cmd>Создайте Web Service</cmd>
+      </step>
+      <step>
+        <cmd>Подключите GitHub репозиторий</cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>

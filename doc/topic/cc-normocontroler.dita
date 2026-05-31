@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="CC-NORMOCONTROLER" xml:lang="ru">
+  <title/>
+  <body>
+    <table id="table_heading" frame="none">
+      <tgroup cols="1" colsep="0" rowsep="0">
+        <tbody>
+          <row>
+            <entry align="center"><b>ЛИСТ НОРМОКОНТРОЛЕРА</b><?br?></entry>
+          </row>
+          <row>
+            <entry>
+              <p>1. Лист является обязательным приложением к пояснительной записке выпускной
+                квалификационной работы.</p>
+              <p>2. Нормоконтролер имеет право возвращать документацию без рассмотрения в случаях: <ul>
+                  <li>нарушения установленной комплектности;</li>
+                  <li>отсутствия обязательных подписей;</li>
+                  <li>нечеткого выполнения текстового и графического материала.</li>
+                </ul></p>
+              <p>3. Устранение ошибок, указанных нормоконтролером, обязательно.</p>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <p>&#160;</p>
+    <table id="table_remarklist_heading" frame="none">
+      <tgroup cols="1" colsep="0" rowsep="0">
+        <tbody>
+          <row>
+            <entry align="center"><b>ПЕРЕЧЕНЬ</b></entry>
+          </row>
+          <row>
+            <entry align="center">замечаний и предложений нормоконтролера по дипломному проекту
+              студента</entry>
+          </row>
+          <row>
+            <entry/>
+          </row>
+          <row>
+            <entry align="center" rowsep="1">группы <keyword keyref="key_prodStudentGroup"/>
+              <keyword keyref="key_prodStudentInitials_rod"/></entry>
+          </row>
+          <row>
+            <entry align="center"><sup>(группа, инициалы, фамилия)</sup></entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+
+    <table id="table_remarklist" frame="all">
+      <tgroup cols="2" colsep="1" rowsep="1">
+        <colspec colnum="1" colwidth="3*" colname="col1"/>
+        <colspec colnum="2" colwidth="13.5*" colname="col2"/>
+        <thead>
+          <row>
+            <entry><p>Лист</p><p>(страница)</p></entry>
+            <entry>Содержание замечаний и предложений со ссылкой на нормативный документ, стандарт
+              или типовую документацию </entry>
+          </row>
+        </thead>
+        <tbody>
+          <row rowsep="0">
+            <entry/>
+            <entry/>
+          </row>
+          <row rowsep="0">
+            <entry/>
+            <entry/>
+          </row>
+          <row rowsep="0">
+            <entry/>
+            <entry/>
+          </row>
+          <row rowsep="0">
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry/>
+            <entry/>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <p>&#160;</p>
+
+    <table id="table_footer" frame="none">
+      <tgroup cols="5" colsep="0" rowsep="0">
+        <colspec colnum="1" colwidth="1.5*" colname="col1"/>
+        <colspec colnum="2" colwidth="4*" colname="col2"/>
+        <colspec colnum="3" colwidth="3.5*" colname="col3"/>
+        <colspec colnum="4" colwidth="3.5*" colname="col4"/>
+        <colspec colnum="5" colwidth="4*" colname="col5"/>
+        <tbody>
+          <row>
+            <entry/>
+            <entry/>
+            <entry/>
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry>Дата</entry>
+            <entry rowsep="1"/>
+            <entry>Нормоконтролер</entry>
+            <entry rowsep="1"/>
+            <entry rowsep="1"><i><keyword keyref="key_prodApprover"/></i></entry>
+          </row>
+          <row>
+            <entry/>
+            <entry/>
+            <entry/>
+            <entry align="center"><sup>(подпись)</sup></entry>
+            <entry align="center"><sup>(фамилия, инициалы)</sup></entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+
+  </body>
+</topic>

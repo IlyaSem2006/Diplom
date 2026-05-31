@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="CC-ZADANIE" xml:lang="ru">
+  <title/>
+  <conbody>
+    <table id="table_zadanie" frame="none">
+      <tgroup cols="7" colsep="0" rowsep="1">
+          <colspec colnum="1" colname="col1"/>
+          <colspec colnum="2" colname="col2"/>
+          <colspec colnum="3" colname="col3"/>
+          <colspec colnum="4" colname="col4"/>
+          <colspec colnum="5" colname="col5"/>
+          <colspec colnum="6" colname="col6"/>
+          <colspec colnum="7" colname="col7"/>
+          <tbody>
+            <row>
+              <entry namest="col1" nameend="col7" align="center">Казанский технологический колледж</entry>
+            </row>
+            <row><entry namest="col1" nameend="col7"/></row>
+            <row>
+              <entry namest="col1" nameend="col5"/>
+              <entry namest="col6" nameend="col7">«УТВЕРЖДАЮ»</entry>
+            </row>
+          </tbody>
+        </tgroup>
+    </table>
+  </conbody>
+</concept>

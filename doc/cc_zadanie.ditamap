@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd">
+<bookmap id="CC" xml:lang="ru">
+  
+  <bookmeta>
+    <author type="creator"  xml:lang="ru">И.Д. Семенов</author>
+  </bookmeta>
+  <frontmatter>
+    <topicref href="concept/cc-zadanie.dita" toc="no"/>
+    <mapref href="common/cc-keys.ditamap" format="ditamap"/>
+  </frontmatter>
+</bookmap>

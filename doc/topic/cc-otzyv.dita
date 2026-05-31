@@ -1,0 +1,322 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="CC-OTZYV" xml:lang="ru">
+  <title/>
+  <body>
+    <table id="table_heading" frame="none">
+      <tgroup cols="1" colsep="0" rowsep="0">
+        <tbody>
+          <row>
+            <entry align="center"><b>ОТЗЫВ</b></entry>
+          </row>
+          <row>
+            <entry align="center">о выпускной квалификационной работе студента</entry>
+          </row>
+          <row>
+            <entry align="center"><keyword keyref="key_prod_KTK_abbrev"/></entry>
+          </row>
+          <row>
+            <entry/>
+          </row>
+          <row>
+            <entry align="center" rowsep="1"><keyword keyref="key_prodStudentFIO_rod"/></entry>
+          </row>
+          <row>
+            <entry align="center"><sup>(ФИО полностью)</sup></entry>
+          </row>
+          <row>
+            <entry/>
+          </row>
+          <row>
+            <entry>по выполнению выпускной квалификационной работы по специальности:</entry>
+          </row>
+          <row>
+            <entry rowsep="1"><keyword keyref="key_prodStudentSpeciality"/></entry>
+          </row>
+          <row>
+            <entry/>
+          </row>
+          <row>
+            <entry>на тему: <u>«<keyword keyref="key_prodTheme"/>»</u></entry>
+          </row>
+          <row>
+            <entry/>
+          </row>
+          <row>
+            <entry>Выпускная квалификационная работа выполнена в соответствии с заданием и состоит
+              из пояснительной записки, изложенной на ___ страницах печатного
+              текста<!-- и графической части
+              на ___ листах-->.</entry>
+          </row>
+          <row>
+            <entry/>
+          </row>
+          <row>
+            <entry><b>Оценка соответствия требованиям ФГОС подготовленности автора выпускной
+                квалификационной работы</b></entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <p>&#160;</p>
+    <p/>
+    <p/>
+
+    <table id="table_scoring" frame="all">
+      <tgroup cols="4" colsep="1" rowsep="1">
+        <colspec colnum="1" colwidth="126*" colname="col1"/>
+        <colspec colnum="2" colwidth="13*" colname="col2"/>
+        <colspec colnum="3" colwidth="13*" colname="col3"/>
+        <colspec colnum="4" colwidth="13*" colname="col4"/>
+        <thead>
+          <row>
+            <entry><p>&#160;</p><p>&#160;</p>Требования к профессиональной подготовке<p>&#160;</p><p>&#160;</p><p>&#160;</p></entry>
+            <entry rotate="1">Соответствует</entry>
+            <entry rotate="1">Соответствует в основном</entry>
+            <entry rotate="1">Не соответствует</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>Уметь корректно формулировать и ставить задачи (проблемы) своей деятельности при
+              выполнении работы, анализировать, диагностировать причины появления проблем, их
+              актуальность </entry>
+            <entry/>
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry>Устанавливать приоритеты и методы решения поставленных задач (проблем)</entry>
+            <entry/>
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry>Уметь использовать информацию – правильно оценить и обобщить степень изученности
+              объекта изучения</entry>
+            <entry/>
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry>Владеть компьютерными методами сбора, хранения и обработки (редактирования)
+              информации, применяемой в сфере профессиональной деятельности</entry>
+            <entry/>
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry>Владеть современными методами анализа и интерпретации полученной информации,
+              оценивать их возможности при решении поставленных задач (проблем)</entry>
+            <entry/>
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry>Уметь рационально планировать время выполнения работы, определять грамотную
+              последовательность и объем операций и решений при выполнении поставленной
+              задачи</entry>
+            <entry/>
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry>Уметь объективно оценивать полученные результаты расчетов, вычислений, используя
+              для сравнения данные других направлений (химии, технологии и т.д.)</entry>
+            <entry/>
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry>Уметь анализировать полученные результаты интерпретации экспериментальных
+              данных</entry>
+            <entry/>
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry>Знать методы системного анализа</entry>
+            <entry/>
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry>Уметь осуществлять деятельность в кооперации с коллегами, находить компромиссы
+              при совместной деятельности</entry>
+            <entry/>
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry>Уметь делать самостоятельные обоснованные и достоверные выводы из
+              проделанной работы</entry>
+            <entry/>
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry>Уметь пользоваться научной литературой профессиональной
+              направленности
+            </entry>
+            <entry/>
+            <entry/>
+            <entry/>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+
+    <table id="table_resume" frame="none">
+      <tgroup cols="1" colsep="0" rowsep="0">
+        <tbody>
+          <row>
+            <entry rowsep="0"/>
+          </row>
+          <row>
+            <entry rowsep="1">Положительные стороны выпускной квалификационной работы</entry>
+          </row>
+          <row>
+            <entry rowsep="1"/>
+          </row>
+          <row>
+            <entry rowsep="1"/>
+          </row>
+          <row>
+            <entry rowsep="1"/>
+          </row>
+          <row>
+            <entry rowsep="1"/>
+          </row>
+          <row>
+            <entry rowsep="1"/>
+          </row>
+          <row>
+            <entry rowsep="1"/>
+          </row>
+          <row>
+            <entry rowsep="1"/>
+          </row>
+          <row>
+            <entry rowsep="1"/>
+          </row>
+          <row>
+            <entry rowsep="1"/>
+          </row>
+          <row>
+            <entry rowsep="0"/>
+          </row>
+          <row>
+            <entry rowsep="1">Недостатки выпускной квалификационной работы</entry>
+          </row>
+          <row>
+            <entry rowsep="1"/>
+          </row>
+          <row>
+            <entry rowsep="1"/>
+          </row>
+          <row>
+            <entry rowsep="1"/>
+          </row>
+          <row>
+            <entry rowsep="1"/>
+          </row>
+          <row>
+            <entry rowsep="1"/>
+          </row>
+          <row>
+            <entry rowsep="1"/>
+          </row>
+          <row>
+            <entry rowsep="1"/>
+          </row>
+          <row>
+            <entry rowsep="1"/>
+          </row>
+          <row>
+            <entry rowsep="1"/>
+          </row>
+          <row>
+            <entry rowsep="0"/>
+          </row>
+          <row>
+            <entry rowsep="1">Заключение и предлагаемая оценка выпускной квалификационной работы</entry>
+          </row>
+          <row>
+            <entry rowsep="1"/>
+          </row>
+          <row>
+            <entry rowsep="1"/>
+          </row>
+          <row>
+            <entry rowsep="1"/>
+          </row>
+          <row>
+            <entry rowsep="1"/>
+          </row>
+          <row>
+            <entry rowsep="1"/>
+          </row>
+          <row>
+            <entry rowsep="1"/>
+          </row>
+          <row>
+            <entry rowsep="1"/>
+          </row>
+          <row>
+            <entry rowsep="1"/>
+          </row>
+          <row>
+            <entry rowsep="1"/>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <p>&#160;</p>
+    <table id="table_footer" frame="none">
+      <tgroup cols="4" colsep="0" rowsep="0">
+        <colspec colnum="1" colwidth="3*" colname="col1"/>
+        <colspec colnum="2" colwidth="2*" colname="col2"/>
+        <colspec colnum="3" colwidth="2*" colname="col3"/>
+        <colspec colnum="4" colwidth="3*" colname="col4"/>
+        <tbody>
+          <row>
+            <entry/>
+            <entry/>
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry>Руководитель:</entry>
+            <entry rowsep="1" align="right">/</entry>
+            <entry rowsep="1" align="center"><i><keyword keyref="key_prodSupervisor"/></i></entry>
+            <entry rowsep="0" align="left">/</entry>
+          </row>
+          <row>
+            <entry/>
+            <entry/>
+            <entry align="center"><sup>(ФИО)</sup></entry>
+            <entry/>
+          </row>
+          <row>
+            <entry namest="col1" nameend="col4"><keyword keyref="key_prod_dateblank"/><keyword
+                keyref="key_prod_year"/></entry>
+          </row>
+          <row>
+            <entry/>
+            <entry/>
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry>С отзывом ознакомлен:</entry>
+            <entry rowsep="1" align="right">/</entry>
+            <entry rowsep="1" align="center"><i><keyword keyref="key_prodStudentInitials_imen"
+              /></i></entry>
+            <entry rowsep="0" align="left">/</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+
+  </body>
+</topic>
