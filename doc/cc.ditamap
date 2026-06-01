@@ -95,7 +95,7 @@
   </chapter>
   <appendices>
     <appendix keys="app_1" importance="required">
-      <topicref navtitle="Исходные коды основного приложения" href="appendix/cc-app_a.dita"/>
+      <topicref href="appendix/cc-app_a.dita"/>
     </appendix>
   <!--appendix keys="app_2" importance="required">
     <topicref navtitle="Структура БД" href="common/cc-under-construction.dita"/>

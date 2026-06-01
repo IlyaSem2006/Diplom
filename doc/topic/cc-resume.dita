@@ -22,8 +22,8 @@
         </li>
         <li>
           <p>Разработана структура базы данных с нормализованными таблицами
-              (<codeph>users</codeph>, <codeph>products</codeph>, <codeph>daily_records</codeph>,
-              <codeph>user_goals</codeph>), обеспечивающая целостность и эффективность хранения
+            (<codeph>users</codeph>, <codeph>products</codeph>, <codeph>food_entries</codeph>,
+            <codeph>user_levels</codeph> , <codeph>user_profile</codeph>), обеспечивающая целостность и эффективность хранения
             информации.</p>
         </li>
         <li>

@@ -1,0 +1,10 @@
++-------------------+
+| Tables_in_calckal |
++-------------------+
+| food_entries      |
+| products          |
+| user_levels       |
+| user_profile      |
+| users             |
++-------------------+
+food_entries, products, user_levels, user_profile, users

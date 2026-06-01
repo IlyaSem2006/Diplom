@@ -25,8 +25,9 @@
 	</target>
 
     <target name="docx">
-		<property name="dotx.file" location="${basedir}/xsl/org.docx.mod/docx/resources/base_Normal.docx"/>
-	    <property name="footer.xsl" location="${basedir}/xsl/org.docx.mod/docx/word/otzyv.footer.xsl"/>
+		<!--property name="dotx.file" location="${basedir}/xsl/org.docx.mod/docx/resources/base_Normal.docx"/-->
+		<property name="dotx.file" location="${basedir}/xsl/org.docx.mod/docx/resources/base_Normal.dotm"/>
+	    <property name="footer.xsl" location="${basedir}/xsl/org.docx.mod/docx/word/ktk.footer.xsl"/>
 	    <property name="document.xsl" location="${basedir}/xsl/org.docx.mod/docx/word/ktk.document.xsl"/>
         <ant antfile="${ditadir}/build.xml">
             <property name="args.input" value="cc.ditamap"/>
@@ -36,7 +37,7 @@
             <property name="args.gen.task.lbl" value="YES"/>
             <property name="args.grammar.cache" value="YES"/>
             <property name="clean.temp" value="yes"/>
-            <property name="args.docx.macros" value="NO"/>
+            <property name="args.docx.macros" value="YES"/>
             <property name="args.docx.button" value="NO"/>
             <property name="args.dita.link_title.view" value="YES"/>
             <property name="org.dita.toc.level" value="5"/>
@@ -47,9 +48,9 @@
             <!--property name="org.dita.index.skip" value="yes"/-->
         </ant>
 	    <!-- Автозапуск vba-макроса постобработки DOCM -->
-    	<!--antcall target="-ps">
+    	<antcall target="-ps">
 	      <param name="fdocm" value="${basedir}/out/${product}"/>
-	    </antcall-->
+	    </antcall>
 
     </target>
     <target name="zadanie">
