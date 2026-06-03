@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map id="ANALYSE" xml:lang="ru">
+    <!--title>Анализ предметной области</title-->
+    <topicref href="cc-analyse.dita">
+        <topicref href="cc-aktualnost.dita"/>
+        <topicref navtitle="" href="cc-obzor.dita"/>
+    </topicref>
+</map>

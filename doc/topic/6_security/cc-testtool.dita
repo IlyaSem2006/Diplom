@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="CC-TESTTOOL" xml:lang="ru">
+  <title>Инструменты и окружение</title>
+  <body>
+    <section>
+      <title>Инструменты тестирования</title>
+      <p>
+        <ol>
+          <li>
+            <p><codeph>unittest</codeph> / <codeph>pytest</codeph> — модульное и интеграционное
+              тестирование;</p>
+          </li>
+          <li>
+            <p><codeph>Selenium</codeph> — автоматизация взаимодействия с браузером;</p>
+          </li>
+          <li>
+            <p><codeph>Locust</codeph> — нагрузочное тестирование;</p>
+          </li>
+          <li>
+            <p><codeph>Flask‑Testing</codeph> — вспомогательные утилиты для тестирования
+              Flask‑приложений;</p>
+          </li>
+          <li>
+            <p><codeph>Postman</codeph> — тестирование API (если реализовано);</p>
+          </li>
+          <li>
+            <p>встроенные инструменты браузера (DevTools) — отладка фронтенда.</p>
+          </li>
+        </ol>
+      </p>
+    </section>
+    <section>
+      <title>Тестовое окружение</title>
+      <p>
+        <ol>
+          <li>
+            <p>Локальное: PostgreSQL (локальная БД), Gunicorn (локальный сервер), браузеры
+              (Chrome, Firefox, Safari).</p>
+          </li>
+          <li>
+            <p>Тестовое: развёртывание на Render.com в режиме staging с отдельной БД.</p>
+          </li>
+          <li>
+            <p>Продакшн: мониторинг после развёртывания (логи, метрики).</p>
+          </li>
+        </ol>
+      </p>
+    </section>
+  </body>
+</topic>

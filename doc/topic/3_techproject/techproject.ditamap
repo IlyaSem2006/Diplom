@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map id="CC-TECHPROJECT" xml:lang="ru">
+    <topicref href="cc-techproject.dita">
+        <topicref href="cc-archproektirovanie.dita"/>
+        <topicref href="cc-bdproektirovanie.dita"/>
+        <topicref href="cc-obosnovanie.dita"/>
+    </topicref>
+</map>

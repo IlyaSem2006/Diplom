@@ -87,7 +87,7 @@
     <keydef keys="key_prodStudentGroup">
         <topicmeta>
             <keywords>
-                <keyword>09.07.22</keyword>
+                <keyword>0907-22</keyword>
             </keywords>
         </topicmeta>
     </keydef>
@@ -114,12 +114,11 @@
     <keydef keys="key_prodSupervisor">
         <topicmeta>
             <keywords>
-                <keyword><!-- Укажи ФИО руководителя вместо этого комментария --></keyword>
+                <keyword>Макаров Даниил Александрович</keyword>
             </keywords>
         </topicmeta>
     </keydef>
  
     <keydef keys="key_topic_underconstruction" href="./cc-under-construction.dita"/>
-    
  
 </map>

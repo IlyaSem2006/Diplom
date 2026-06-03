@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map id="SECURITY" xml:lang="ru">
+    <topicref href="cc-security.dita">
+        <topicref navtitle="" href="cc-vidy_test.dita"/>
+        <topicref navtitle="" href="cc-testcase.dita"/>
+        <topicref navtitle="" href="cc-testtool.dita"/>
+        <topicref navtitle="" href="cc-testcrit.dita"/>
+        <topicref navtitle="" href="cc-testresult.dita"/>
+        <topicref navtitle="" href="cc-testresume.dita"/>
+    </topicref>
+</map>

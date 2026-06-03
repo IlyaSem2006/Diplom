@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="CC-OBZOR" xml:lang="ru">
+  <title>Обзор аналогов</title>
+  <body>
+    <p>
+      Ниже представлен обзор популярных решений, предлагающих аналогичную или близкую к нашему проекту функциональность.
+      <ol id="ol_rnc_pgc_ljc">
+        <li>
+          <p>MyFitnessPal. Веб-сайт и приложение для отслеживания состояния здоровья и
+            фитнеса. Позволяет вводить данные о потребляемой пище вручную или с помощью сканирования
+            штрих-кодов. Имеет базу данных более чем из 14 миллионов продуктов питания, а также
+            инструменты для отслеживания физических нагрузок и калорий. Интегрируется с другими
+            приложениями для фитнеса (Garmin Connect, Fitbit, Samsung Health, Apple Watch). <!--xref
+              href="https://tr-page.yandex.ru/translate?lang=en-ru&amp;url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FMyFitnessPal"
+              format="html" scope="external"
+                ><codeph>[12](https://tr-page.yandex.ru/translate?lang=en-ru&amp;url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FMyFitnessPal)</codeph></xref><xref
+              href="https://www.myfitnesspal.com/ru" format="html" scope="external"
+                ><codeph>[13](https://www.myfitnesspal.com/ru)</codeph></xref--></p>
+        </li>
+        <li>
+          <p>OpenNutriTracker. Открытое мобильное приложение для отслеживания питания.
+            Позволяет вести дневник питания, использовать базу данных продуктов, сканировать
+            штрихкоды, отслеживать физическую активность. Приоритеты — простота интерфейса и
+            конфиденциальность данных: информация хранится локально на устройстве пользователя.
+              <!--xref href="https://alternativeto.net/software/fatsecret/" format="html"
+              scope="external"
+              ><codeph>[1](https://alternativeto.net/software/fatsecret/)</codeph></xref><xref
+              href="https://deepwiki.com/simonoppowa/OpenNutriTracker" format="html"
+              scope="external"
+                ><codeph>[6](https://deepwiki.com/simonoppowa/OpenNutriTracker)</codeph></xref><xref
+              href="https://github.com/simonoppowa/OpenNutriTracker" format="html" scope="external"
+                ><codeph>[7](https://github.com/simonoppowa/OpenNutriTracker)</codeph></xref--></p>
+        </li>
+        <li>
+          <p>Nutrivio. AI-трекер питания с функцией распознавания еды по фотографии.
+            Рассчитывает пищевую ценность блюд, выявляет аллергены, предлагает персонализированные
+            рецепты и рекомендации по питанию. Есть интеграция со Strava и Apple Health. Предлагает
+            геймифицированный опыт с системой достижений. <!--xref
+              href="https://alternativeto.net/software/fatsecret/" format="html" scope="external"
+                ><codeph>[1](https://alternativeto.net/software/fatsecret/)</codeph></xref><xref
+              href="https://nutriv.io/" format="html" scope="external"
+                ><codeph>[20](https://nutriv.io/)</codeph></xref><xref
+              href="https://apps.apple.com/ru/app/nutrivio-%D1%82%D1%80%D0%B5%D0%BA%D0%B5%D1%80-%D0%BF%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D1%8F-%D1%81-%D0%B8%D0%B8/id6748462599"
+              format="html" scope="external"
+                ><codeph>[21](https://apps.apple.com/ru/app/nutrivio-%D1%82%D1%80%D0%B5%D0%BA%D0%B5%D1%80-%D0%BF%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D1%8F-%D1%81-%D0%B8%D0%B8/id6748462599)</codeph></xref--></p>
+        </li>
+        <li>
+          <p>Alma Nutrition. Приложение с AI-помощником для отслеживания питания. Позволяет
+            регистрировать приёмы пищи с помощью голоса, текста или фотографии. Сканирует штрихкоды,
+            отслеживает макро- и микроэлементы, даёт персонализированные рекомендации по питанию.
+            Адаптируется под цели пользователя (похудение, набор мышечной массы и т. д.). <!--xref
+              href="https://alternativeto.net/software/fatsecret/" format="html" scope="external"
+                ><codeph>[1](https://alternativeto.net/software/fatsecret/)</codeph></xref><xref
+              href="https://apps.apple.com/ru/app/alma-nutrition-coach/id6736372798" format="html"
+              scope="external"
+                ><codeph>[16](https://apps.apple.com/ru/app/alma-nutrition-coach/id6736372798)</codeph></xref><xref
+              href="https://techcrunch.com/2025/02/05/former-whoop-execs-new-app-alma-uses-ai-for-all-things-nutrition/"
+              format="html" scope="external"
+                ><codeph>[17](https://techcrunch.com/2025/02/05/former-whoop-execs-new-app-alma-uses-ai-for-all-things-nutrition/)</codeph></xref--></p>
+        </li>
+        <li>
+          <p>Mahlzait. Приложение с AI-сканером еды. Позволяет быстро регистрировать приёмы
+            пищи с помощью фотографии или описания. Есть функция сканирования штрихкодов,
+            отслеживание макронутриентов, управление целями (похудение, набор массы), менеджер
+            рецептов и история приёмов пищи с анализом трендов. <!--xref
+              href="https://alternativeto.net/software/fatsecret/" format="html" scope="external"
+                ><codeph>[1](https://alternativeto.net/software/fatsecret/)</codeph></xref><xref
+              href="https://apps.apple.com/ru/app/mahlzait-ai-calorie-counter/id6747400456?l=en-GB"
+              format="html" scope="external"
+                ><codeph>[25](https://apps.apple.com/ru/app/mahlzait-ai-calorie-counter/id6747400456?l=en-GB)</codeph></xref--></p>
+        </li>
+        <li>
+          <p>Lose It!. Приложение для похудения с обширной базой продуктов (более 700 000
+            позиций). Позволяет составлять планы питания, отслеживать макронутриенты, интегрируется
+            с фитнес-трекерами. Есть функция добавления собственных рецептов. <!--xref
+              href="https://hi-tech.mail.ru/compilations/126261-luchshie-prilozheniya-dlya-pokhudeniya/"
+              format="html" scope="external"
+                ><codeph>[26](https://hi-tech.mail.ru/compilations/126261-luchshie-prilozheniya-dlya-pokhudeniya/)</codeph></xref--></p>
+        </li>
+        <li>
+          <p>Lifesum. Приложение для осознанного подхода к рациону. Предлагает
+            персонализированные планы питания с учётом целей пользователя, имеет коллекцию рецептов
+            и практические советы по питанию. Интегрируется с Fitbit, Google Fit и другими
+            приложениями. <!--xref
+              href="https://kuban24.tv/item/top-5-prostyh-besplatnyh-programm-dlya-podscheta-kbzhu"
+              format="html" scope="external"
+                ><codeph>[11](https://kuban24.tv/item/top-5-prostyh-besplatnyh-programm-dlya-podscheta-kbzhu)</codeph></xref><xref
+              href="https://hi-tech.mail.ru/compilations/126261-luchshie-prilozheniya-dlya-pokhudeniya/"
+              format="html" scope="external"
+                ><codeph>[26](https://hi-tech.mail.ru/compilations/126261-luchshie-prilozheniya-dlya-pokhudeniya/)</codeph></xref--></p>
+        </li>
+        <li>
+          <p>«Мой здоровый рацион». Приложение, которое сочетает функции счётчика калорий и
+            дневника. Позволяет добавлять собственные рецепты, рассчитывать КБЖУ после термической
+            обработки блюд, общаться с другими пользователями и вести блог. В платной версии
+            доступна отслеживание потребления витаминов и микроэлементов. <!--xref
+              href="https://kuban24.tv/item/top-5-prostyh-besplatnyh-programm-dlya-podscheta-kbzhu"
+              format="html" scope="external"
+                ><codeph>[11](https://kuban24.tv/item/top-5-prostyh-besplatnyh-programm-dlya-podscheta-kbzhu)</codeph></xref--></p>
+        </li>
+      </ol>
+    </p>
+    <p>Выявленные недостатки аналогов:</p>
+    <ul id="ul_yy3_vhc_ljc">
+      <li>
+        <p>платные подписки на базовые функции;</p>
+      </li>
+      <li>
+        <p>избыточная сложность интерфейса в некоторых решениях;</p>
+      </li>
+      <li>
+        <p>ограниченные возможности кастомизации;</p>
+      </li>
+      <li>
+        <p>зависимость от мобильных платформ (слабая веб‑версия).</p>
+      </li>
+    </ul>
+  </body>
+</topic>

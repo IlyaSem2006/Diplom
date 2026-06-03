@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map id="CC-WORKPROJECT" xml:lang="ru">
+    <topicref href="cc-workproject.dita">
+        <topicref navtitle="" href="cc-flask.dita"/>
+        <topicref navtitle="" href="cc-client.dita"/>
+        <topicref navtitle="" href="cc-raschet.dita"/>
+        <topicref navtitle="" href="cc-deploy.dita"/>
+    </topicref>
+</map>

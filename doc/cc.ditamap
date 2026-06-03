@@ -31,7 +31,7 @@
       <keyword id="prodTypeTL">ВЫПУСКНАЯ КВАЛИФИКАЦИОННАЯ РАБОТА</keyword>
       
       <!-- Уровень образования -->
-      <keyword id="prodEduLevelTL"></keyword>
+      <keyword id="prodEduLevelTL">основное общее</keyword>
       
       <!-- Вид ВКР -->
       <keyword id="prodTypeOfWorkTL">проектный</keyword>
@@ -63,36 +63,29 @@
       <glossarylist href="common/cc-glossary.ditamap" format="ditamap"/>
     </booklists>
   </frontmatter>
+
   <chapter>
-    <topicref href="topic/cc-vvedenie.dita">
-      <topicref href="topic/cc-aktualnost.dita"/>
-      <topicref href="topic/cc-cel.dita"/>
-      <topicref href="topic/cc-zadachi.dita"/>
-    </topicref>
-  </chapter>
-  <chapter navtitle="Основная часть" keys="osnovnaya">
-    <topicref navtitle="" href="topic/cc-obzor.dita"/>
-    <topicref navtitle="" href="topic/cc-obosnovanie.dita"/>
-    <topicref navtitle="" href="topic/cc-proektirovanie.dita">
-      <topicref navtitle="" href="topic/cc-archproektirovanie.dita"/>
-      <topicref navtitle="" href="topic/cc-bdproektirovanie.dita"/>
-      <topicref navtitle="" href="topic/cc-flask.dita"/>
-      <topicref navtitle="" href="topic/cc-client.dita"/>
-      <topicref navtitle="" href="topic/cc-raschet.dita"/>
-      <topicref navtitle="" href="task/cc-deploy.dita"/>
-    </topicref>
-    <topicref navtitle="" href="topic/test/cc-test.dita">
-      <topicref navtitle="" href="topic/test/cc-vidy_test.dita"/>
-      <topicref navtitle="" href="topic/test/cc-testcase.dita"/>
-      <topicref navtitle="" href="topic/test/cc-testtool.dita"/>
-      <topicref navtitle="" href="topic/test/cc-testcrit.dita"/>
-      <topicref navtitle="" href="topic/test/cc-testresult.dita"/>
-      <topicref navtitle="" href="topic/test/cc-testresume.dita"/>
-    </topicref>
-  </chapter>
+    <mapref href="topic/1_analyse/analyse.ditamap" format="ditamap"/>
+  </chapter>  
+  <chapter>
+    <mapref href="topic/2_techzadanie/techzadanie.ditamap" format="ditamap"/>
+  </chapter>  
+  <chapter>
+    <mapref href="topic/3_techproject/techproject.ditamap" format="ditamap"/>
+  </chapter>  
+  <chapter>
+    <mapref href="topic/4_workproject/workproject.ditamap" format="ditamap"/>
+  </chapter>  
+  <chapter>
+    <mapref href="topic/5_userinstr/userinstr.ditamap" format="ditamap"/>
+  </chapter>  
+  <chapter>
+    <mapref href="topic/6_security/security.ditamap" format="ditamap"/>
+  </chapter>  
   <chapter>
     <topicref navtitle="" href="topic/cc-resume.dita"/>
   </chapter>
+
   <appendices>
     <appendix keys="app_1" importance="required">
       <topicref href="appendix/cc-app_a.dita"/>
