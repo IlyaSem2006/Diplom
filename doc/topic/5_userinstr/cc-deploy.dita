@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA General Task//EN" "generaltask.dtd">
+<task id="CC-CEL" xml:lang="ru">
+  <title>Инструкция по развертыванию приложения</title>
+  <taskbody>
+    <section>
+      <p>Приложение может быть развернуто на локальном компьютере или в облачном сервисе, если они
+        удовлетворяют следующим требованиям: <ul>
+          <li>Поддержка СУБД PostgreSQL.</li>
+          <li>Поддержка приложений Python.</li>
+          <li>Возможность установки дополнительных библиотек Python:
+            <ul>
+              <li>Flask версии 3.0.3</li>
+              <li>Flask-SQLAlchemy версии 3.1.1</li>
+              <li>psycopg[binary] версии 3.2.9</li>
+              <li>gunicorn версии 22.0.0</li>
+              <li>python-dotenv версии 1.0.1</li>
+              <li>Werkzeug версии не ниже 3.0.0</li>
+            </ul>
+          </li>
+        </ul>
+      </p>
+    </section>
+    <context>Запуск приложения на локальном компьютере.</context>
+    <steps>
+      <step>
+        <cmd>Создайте клон репозитория.</cmd>
+        <stepxmp><codeph>git clone
+            https://github.com/IlyaSem2006/Diplom.git</codeph></stepxmp>
+      </step>
+      <step>
+        <cmd>Установите зависимости</cmd>
+        <stepxmp><codeph>pip install -r requirements.txt</codeph></stepxmp>
+      </step>
+      <step>
+        <cmd>Установите СУБЛ PostgresSQL и создайте в ней базу данных</cmd>
+        <stepxmp><codeph>CREATE DATABASE calckal;</codeph></stepxmp>
+      </step>
+      <step>
+        <cmd>Настройте подключение в файле <codeph>app.py</codeph></cmd>
+        <stepxmp>
+          <codeblock>
+# Получаем DATABASE_URL из переменных окружения
+database_url = os.environ.get('DATABASE_URL')
+if not database_url:
+    # Локальная разработка
+    database_url = 'postgresql://postgres:1234@localhost/calckal'
+          </codeblock>
+        </stepxmp>
+      </step>
+      <step>
+        <cmd>Запустите приложение</cmd>
+        <stepxmp><codeph>python app.py</codeph></stepxmp>
+      </step>
+    </steps>
+    <result>Web-приложение будет доступно по адресу:&#160;<xref href="http://127.0.0.1:5000"
+        scope="external" format="html">http://127.0.0.1:5000</xref></result>
+    <example>В качестве наглядного примера данный проект развернут на облачном сервисе по адресу
+        <xref href="https://diplom-eiot.onrender.com" scope="external" format="html"
+          >https://diplom-eiot.onrender.com</xref>.<p>&#160;</p> 
+    </example>
+  </taskbody>
+</task>

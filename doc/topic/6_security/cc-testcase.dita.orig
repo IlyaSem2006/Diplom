@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="CC-TESTCASE" xml:lang="ru">
+  <title>Сценарии тестирования</title>
+  <body>
+    <section>
+      <title>Функциональные сценарии</title>
+      <table frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <thead>
+            <row>
+              <entry>Сценарий</entry>
+              <entry>Ожидаемый результат</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Регистрация нового пользователя</entry>
+              <entry>Успешное создание аккаунта, перенаправление в личный кабинет</entry>
+            </row>
+            <row>
+              <entry>Вход с корректными учётными данными</entry>
+              <entry>Доступ в личный кабинет, сохранение сессии</entry>
+            </row>
+            <row>
+              <entry>Поиск продукта по названию</entry>
+              <entry>Отображение списка подходящих продуктов</entry>
+            </row>
+            <row>
+              <entry>Добавление продукта в дневник питания</entry>
+              <entry>Запись появляется в таблице дневника, КБЖУ суммируется</entry>
+            </row>
+            <row>
+              <entry>Расчёт суточной нормы калорий</entry>
+              <entry>Отображение BMR и TDEE с учётом пола, возраста, роста, веса и
+                активности</entry>
+            </row>
+            <row>
+              <entry>Просмотр статистики за неделю</entry>
+              <entry>График потребления калорий и макронутриентов, прогресс‑бары достижения
+                целей</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section>
+      <title>Негативные сценарии</title>
+      <table frame="all">
+        <tgroup cols="2" rowsep="1" colsep="1">
+          <thead>
+            <row>
+              <entry>Сценарий</entry>
+              <entry>Ожидаемый результат</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Пустые поля при регистрации</entry>
+              <entry>Сообщение об ошибке, форма не отправляется</entry>
+            </row>
+            <row>
+              <entry>Неверный пароль при входе</entry>
+              <entry>Сообщение «Неверные учётные данные», доступ запрещён</entry>
+            </row>
+            <row>
+              <entry>Отрицательное значение веса продукта</entry>
+              <entry>Сообщение «Введите положительное число», запись не сохраняется</entry>
+            </row>
+            <row>
+              <entry>Попытка доступа к чужому аккаунту</entry>
+              <entry>Перенаправление на страницу входа или ошибку 403</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <p></p>
+    </section>
+  </body>
+</topic>

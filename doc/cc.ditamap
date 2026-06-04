@@ -6,97 +6,94 @@
       <!-- Шапка многострочная -->
       <keyword id="orgNameFullTL1">МИНОБРНАУКИ РОССИИ</keyword>
       <keyword id="orgNameFullTL2" keyref="key_prod_KTK_Name"/>
-      <keyword id="orgNameFullTL3">федерального государственного бюджетного образовательного учреждения</keyword>
+      <keyword id="orgNameFullTL3">федерального государственного бюджетного образовательного
+        учреждения</keyword>
       <keyword id="orgNameFullTL4">высшего образования</keyword>
-      <keyword id="orgNameFullTL5">«Казанский национальный исследовательский технологический университет»</keyword>
+      <keyword id="orgNameFullTL5">«Казанский национальный исследовательский технологический
+        университет»</keyword>
       <keyword id="orgNameFullTL6">(КТК ФГБОУ ВО «КНИТУ»)</keyword>
-
-      <!-- Верхний левый штамп -->            
+      <!-- Верхний левый штамп -->
       <keyword id="orgRezolyucTLTL">Допустить к защите</keyword>
-
       <!-- Верхний правый штамп -->
-      <keyword id="orgRezolyucTLTR"></keyword>
+      <keyword id="orgRezolyucTLTR"/>
       <keyword id="orgDolzhnostTLTR1">Директор КТК</keyword>
       <keyword id="orgDolzhnostTLTR2">ФГБОУ ВО «КНИТУ»</keyword>
       <keyword id="orgFIOTLTR">___________/М.Ф. Вахитов</keyword>
       <keyword id="orgDataTLTR">«___» __________2026 г.</keyword>
-
       <!-- Специальность -->
       <keyword id="prodStudentSpecialityTL" keyref="key_prodStudentSpeciality"/>
-      
       <!-- Группа -->
       <keyword id="prodStudentGroupTL" keyref="key_prodStudentGroup"/>
-      
       <!-- Тип документа: Задание доработку -->
       <keyword id="prodTypeTL">ВЫПУСКНАЯ КВАЛИФИКАЦИОННАЯ РАБОТА</keyword>
-      
       <!-- Уровень образования -->
       <keyword id="prodEduLevelTL">основное общее</keyword>
-      
       <!-- Вид ВКР -->
       <keyword id="prodTypeOfWorkTL">проектный</keyword>
-      
       <!-- Тема -->
       <keyword id="prodThemeTL" keyref="key_prodTheme"/>
-      
       <!-- Нормоконтролер -->
       <keyword id="prodApproverTL" keyref="key_prodApprover"/>
-      
       <!-- Руководитель -->
       <keyword id="prodSupervisorTL" keyref="key_prodSupervisor"/>
-      
       <!-- Студент -->
       <keyword id="prodStudentFIOTL" keyref="key_prodStudentFIO_imen"/>
-
       <!-- Год выпуска -->
       <keyword id="yearTL" keyref="key_prod_year"/>
     </mainbooktitle>
-    
+
   </booktitle>
   <bookmeta>
-    <author type="creator"  xml:lang="ru">И.Д. Семенов</author>
+    <author type="creator" xml:lang="ru">И.Д. Семенов</author>
   </bookmeta>
   <frontmatter>
     <mapref href="common/cc-keys.ditamap" format="ditamap"/>
     <booklists>
-      <toc navtitle="Содержание"/>
+      <toc navtitle="СОДЕРЖАНИЕ"/>
       <glossarylist href="common/cc-glossary.ditamap" format="ditamap"/>
     </booklists>
   </frontmatter>
 
   <chapter>
+    <mapref href="topic/0_vvedenie/vvedenie.ditamap" format="ditamap"/>
+  </chapter>
+  <chapter>
     <mapref href="topic/1_analyse/analyse.ditamap" format="ditamap"/>
-  </chapter>  
+  </chapter>
   <chapter>
     <mapref href="topic/2_techzadanie/techzadanie.ditamap" format="ditamap"/>
-  </chapter>  
+  </chapter>
   <chapter>
     <mapref href="topic/3_techproject/techproject.ditamap" format="ditamap"/>
-  </chapter>  
+  </chapter>
   <chapter>
     <mapref href="topic/4_workproject/workproject.ditamap" format="ditamap"/>
-  </chapter>  
+  </chapter>
   <chapter>
     <mapref href="topic/5_userinstr/userinstr.ditamap" format="ditamap"/>
-  </chapter>  
+  </chapter>
   <chapter>
     <mapref href="topic/6_security/security.ditamap" format="ditamap"/>
-  </chapter>  
+  </chapter>
   <chapter>
     <topicref navtitle="" href="topic/cc-resume.dita"/>
   </chapter>
-
+  <chapter>
+    <topicref navtitle="" href="sprav/cc_reference_documents.dita"/>
+  </chapter>
+  
   <appendices>
     <appendix keys="app_1" importance="required">
       <topicref href="appendix/cc-app_a.dita"/>
     </appendix>
-  <!--appendix keys="app_2" importance="required">
+    <!--appendix keys="app_2" importance="required">
     <topicref navtitle="Структура БД" href="common/cc-under-construction.dita"/>
   </appendix-->
   </appendices>
   <backmatter>
     <booklists>
-            <booklist navtitle="Ссылочные документы" keys="bibliography" href="sprav/cc_reference_documents.dita"/>
+      <!--booklist navtitle="Ссылочные документы" keys="bibliography"
+        href="sprav/cc_reference_documents.dita"/-->
       <!--glossarylist href="common/cc-glossary.ditamap" format="ditamap"/-->
     </booklists>
   </backmatter>

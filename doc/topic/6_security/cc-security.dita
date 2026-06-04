@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="CC-SECURITY" xml:lang="ru">
-  <title>Безопасность и надежность</title>
+  <title>БЕЗОПАСНОСТЬ И НАДЕЖНОСТЬ</title>
   <body>
     <p>Для проверки безопасности и надежности реализованного проекта применялись указанные ниже методы
       тестирования:</p>

@@ -36,10 +36,12 @@
             <property name="args.filter" value="cc.ditaval"/>
             <property name="args.gen.task.lbl" value="YES"/>
             <property name="args.grammar.cache" value="YES"/>
-            <property name="clean.temp" value="yes"/>
+            <property name="clean.temp" value="YES"/>
             <property name="args.docx.macros" value="YES"/>
             <property name="args.docx.button" value="NO"/>
-            <property name="args.dita.link_title.view" value="YES"/>
+            <!--property name="args.dita.link_title.view" value="NO"/-->
+
+			<property name="org.dita.link_title.view" value="NO"/>
             <property name="org.dita.toc.level" value="5"/>
             <!--property name="args.rellinks" value="all"/-->
 
