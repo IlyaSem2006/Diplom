@@ -150,19 +150,16 @@
           </row>
           <row>
             <entry>Цель, задачи и исходные данные работы: </entry>
-            <entry rowsep="1"><i></i></entry>
+            <entry><i></i></entry>
           </row>
           <row>
-            <entry rowsep="1"><i></i></entry>
-            <entry rowsep="1"><i></i></entry>
-          </row>
-          <row>
-            <entry rowsep="1"><i></i></entry>
-            <entry rowsep="1"><i></i></entry>
-          </row>
-          <row>
-            <entry rowsep="1"><i></i></entry>
-            <entry rowsep="1"><i></i></entry>
+            <entry namest="col1" nameend="col2">
+              <u>
+                <i>
+                  <text conref="../topic/2_techzadanie/cc-cel.dita#CC-CEL/text_projectgoal"/>
+                </i>
+              </u>
+            </entry>
           </row>
         </tbody>
       </tgroup>
@@ -179,25 +176,20 @@
           </row>
           <row>
             <entry>Задание по разделам работы: </entry>
-            <entry rowsep="1"><i></i></entry>
+            <entry rowsep="0"><i></i></entry>
           </row>
           <row>
-            <entry rowsep="1"><i></i></entry>
-            <entry rowsep="1"><i></i></entry>
-          </row>
-          <row>
-            <entry rowsep="1"><i></i></entry>
-            <entry rowsep="1"><i></i></entry>
-          </row>
-          <row>
-            <entry rowsep="1"><i></i></entry>
-            <entry rowsep="1"><i></i></entry>
+            <entry namest="col1" nameend="col2">
+              <ol conref="../topic/2_techzadanie/cc-zadachi.dita#CC-ZADACHI/ol_zadachi">
+                <li/>
+              </ol>
+            </entry>
           </row>
         </tbody>
       </tgroup>
     </table>
     
-    <table id="table_Grapth" frame="none" >
+    <!--table id="table_Grapth" frame="none" >
       <tgroup cols="2" colsep="0" rowsep="0">
         <colspec colnum="1" colwidth="12.25*" colname="col1"/>
         <colspec colnum="2" colwidth="4.25*" colname="col2"/>
@@ -224,7 +216,7 @@
           </row>
         </tbody>
       </tgroup>
-    </table>
+    </table-->
     
     <table id="table_Consul" frame="none" >
       <tgroup cols="2" colsep="0" rowsep="0">
@@ -276,8 +268,8 @@
           </row>
           <row>
             <entry>Руководитель</entry>
-            <entry rowsep="1" align="right">(</entry>
-            <entry rowsep="1" align="right">)</entry>
+            <entry rowsep="1" align="right"></entry>
+            <entry rowsep="1" align="right">(<keyword keyref="key_prodSupervisorInitials"/>)</entry>
           </row>
           <row>
             <entry/>
@@ -286,8 +278,8 @@
           </row>
           <row>
             <entry>Задание принял к исполнению</entry>
-            <entry rowsep="1" align="right">(</entry>
-            <entry rowsep="1" align="right">)</entry>
+            <entry rowsep="1" align="right"></entry>
+            <entry rowsep="1" align="right">(<keyword keyref="key_prodStudentInitials_imen"/>)</entry>
           </row>
         </tbody>
       </tgroup>

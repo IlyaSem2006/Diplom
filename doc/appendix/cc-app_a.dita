@@ -3,6 +3,6 @@
 <concept id="cc-app_a" xml:lang="ru">
   <title><text id="title">Исходные коды приложений</text></title>
   <conbody>
-    <p>Исходные коды приложений размещены в открытом доступе на ресурсе GitHub (<xref href="https://github.com/IlyaSem2006/Diplom" scope="external"/>)</p>
+    <p>Исходные коды приложений размещены в открытом доступе на ресурсе GitHub (<xref href="https://github.com/IlyaSem2006/Diplom" scope="external" format="html"/>).</p>
   </conbody>
 </concept>

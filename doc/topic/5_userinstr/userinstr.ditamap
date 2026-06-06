@@ -2,7 +2,8 @@
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
 <map id="INSTR" xml:lang="ru">
     <topicref href="cc-instr.dita">
-        <topicref navtitle="" href="cc-deploy.dita"/>
-        <topicref navtitle="" href="cc-userguide.dita"/>
+        <topicref href="cc-deploy.dita"/>
+        <topicref href="cc-dbsupp.dita"/>
+        <topicref href="cc-userguide.dita"/>
     </topicref>
 </map>

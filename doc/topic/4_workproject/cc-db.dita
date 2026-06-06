@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="CC-DB">
+  <title>Реализация базы данных</title>
+  <body>
+    <p>База данных реализована на PostgreSQL с использованием ORM SQLAlchemy. Система включает
+      четыре основные таблицы, связанные между собой.</p>
+    <section>
+      <title>Описание таблиц</title>
+      <p>1. Таблица users</p>
+      <p>Хранит информацию о пользователях системы.</p>
+      <p>Поля:</p>
+      <ul>
+        <li><codeph>id (INTEGER PRIMARY KEY)</codeph> — уникальный идентификатор пользователя</li>
+        <li><codeph>username (VARCHAR(80) UNIQUE NOT NULL)</codeph> — имя пользователя</li>
+        <li><codeph>email (VARCHAR(120) UNIQUE)</codeph> — электронная почта (может быть NULL)</li>
+        <li><codeph>password_hash (VARCHAR(200) NOT NULL)</codeph> — хешированный пароль</li>
+        <li><codeph>created_at (TIMESTAMP DEFAULT CURRENT_TIMESTAMP)</codeph> — дата создания
+          аккаунта</li>
+      </ul>
+      <p>Ограничения:</p>
+      <ul>
+        <li>уникальность <codeph>username</codeph> и <codeph>email</codeph></li>
+        <li>обязательное заполнение <codeph>username</codeph> и <codeph>password_hash</codeph></li>
+      </ul>
+      <p>2. Таблица products</p>
+      <p>Содержит базу продуктов с пищевой ценностью.</p>
+      <p>Поля:</p>
+      <ul>
+        <li><codeph>id (INTEGER PRIMARY KEY)</codeph> — уникальный идентификатор продукта</li>
+        <li><codeph>name (VARCHAR(100) NOT NULL)</codeph> — название продукта</li>
+        <li><codeph>calories_per_100g (FLOAT NOT NULL)</codeph> — калорийность на 100г</li>
+        <li><codeph>protein (FLOAT DEFAULT 0)</codeph> — белки на 100г</li>
+        <li><codeph>carbs (FLOAT DEFAULT 0)</codeph> — углеводы на 100г</li>
+        <li><codeph>fat (FLOAT DEFAULT 0)</codeph> — жиры на 100г</li>
+        <li><codeph>category (VARCHAR(50) DEFAULT 'Прочее')</codeph> — категория продукта</li>
+        <li><codeph>created_at (TIMESTAMP DEFAULT CURRENT_TIMESTAMP)</codeph> — дата добавления</li>
+      </ul>
+      <p>3. Таблица food_entries</p>
+      <p>Хранит записи о потреблении продуктов пользователями.</p>
+      <p>Поля:</p>
+      <ul>
+        <li><codeph>id (INTEGER PRIMARY KEY)</codeph> — уникальный идентификатор записи</li>
+        <li><codeph>user_id (INTEGER FOREIGN KEY REFERENCES users(id) ON DELETE CASCADE)</codeph> —
+          ID пользователя</li>
+        <li><codeph>product_id (INTEGER FOREIGN KEY REFERENCES products(id))</codeph> — ID
+          продукта</li>
+        <li><codeph>weight (FLOAT NOT NULL)</codeph> — вес потреблённого продукта в граммах</li>
+        <li><codeph>date (DATE NOT NULL)</codeph> — дата потребления</li>
+        <li><codeph>meal_type (VARCHAR(20) NOT NULL)</codeph> — тип приёма пищи</li>
+        <li><codeph>created_at (TIMESTAMP DEFAULT CURRENT_TIMESTAMP)</codeph> — время создания
+          записи</li>
+      </ul>
+      <p>Связи:</p>
+      <ul>
+        <li>связь с таблицей users через <codeph>user_id</codeph> с каскадным удалением</li>
+        <li>связь с таблицей products через <codeph>product_id</codeph></li>
+      </ul>
+      <p>4. Таблица user_profile</p>
+      <p>Содержит персональные данные пользователей.</p>
+      <p>Поля:</p>
+      <ul>
+        <li><codeph>id (INTEGER PRIMARY KEY)</codeph> — уникальный идентификатор профиля</li>
+        <li><codeph>user_id (INTEGER UNIQUE NOT NULL REFERENCES users(id))</codeph> — ID
+          пользователя</li>
+        <li><codeph>name (VARCHAR(100) NOT NULL)</codeph> — имя пользователя</li>
+        <li><codeph>age (INTEGER)</codeph> — возраст</li>
+        <li><codeph>gender (VARCHAR(10))</codeph> — пол</li>
+        <li><codeph>weight (FLOAT)</codeph> — текущий вес</li>
+        <li><codeph>height (FLOAT)</codeph> — рост</li>
+        <li><codeph>activity_level (VARCHAR(20))</codeph> — уровень активности</li>
+        <li><codeph>goal (VARCHAR(20))</codeph> — цель (похудение/набор/поддержание)</li>
+        <li><codeph>target_calories (INTEGER)</codeph> — целевое количество калорий</li>
+        <li><codeph>created_at (TIMESTAMP DEFAULT CURRENT_TIMESTAMP)</codeph> — дата создания
+          профиля</li>
+      </ul>
+      <p>5. Таблица user_levels</p>
+      <p>Хранит информацию об уровнях пользователей.</p>
+      <p>Поля:</p>
+      <ul>
+        <li><codeph>id (INTEGER PRIMARY KEY)</codeph> — уникальный идентификатор записи</li>
+        <li><codeph>user_id (INTEGER UNIQUE NOT NULL REFERENCES users(id))</codeph> — ID
+          пользователя</li>
+        <li><codeph>level (INTEGER DEFAULT 1)</codeph> — текущий уровень</li>
+        <li><codeph>experience (INTEGER DEFAULT 0)</codeph> — накопленный опыт</li>
+        <li><codeph>total_food_entries (INTEGER DEFAULT 0)</codeph> — количество записей о еде</li>
+        <li><codeph>total_products_added (INTEGER DEFAULT 0)</codeph> — количество добавленных
+          продуктов</li>
+        <li><codeph>days_active (INTEGER DEFAULT 0)</codeph> — количество активных дней</li>
+        <li><codeph>last_activity_date (DATE)</codeph> — дата последней активности</li>
+        <li><codeph>achievements (TEXT)</codeph> — достижения в JSON формате</li>
+        <li><codeph>created_at (TIMESTAMP DEFAULT CURRENT_TIMESTAMP)</codeph> — дата создания</li>
+        <li><codeph>updated_at (TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE
+            CURRENT_TIMESTAMP)</codeph> — дата последнего обновления</li>
+      </ul>
+    </section>
+    <section>
+      <title>Связи между таблицами</title>
+      <p/>
+      <ol>
+        <li><codeph>users → food_entries</codeph> (один‑ко‑многим): один пользователь может иметь множество
+          записей о потребленной пище.</li>
+        <li><codeph>users → user_profile</codeph> (один‑к‑одному): у каждого пользователя есть ровно один
+          профиль.</li>
+        <li><codeph>users → food_entries</codeph> (один‑ко‑многим): один пользователь может иметь множество
+          записей о потреблённой пище.</li>
+        <li><codeph>products → food_entries</codeph> (один‑ко‑многим): один продукт может упоминаться во
+          множестве записей разных пользователей.</li>
+      </ol>
+    </section>
+    <section>
+      <title>Нормализация и целостность данных</title>
+      <p>База данных приведена к третьей нормальной форме (3NF):</p>
+      <ul>
+        <li>устранены повторяющиеся группы;</li>
+        <li>все неключевые поля зависят только от первичного ключа;</li>
+        <li>отсутствуют транзитивные зависимости.</li>
+      </ul>
+      <p><b>Меры обеспечения целостности:</b></p>
+      <ul>
+        <li>внешние ключи с каскадными операциями (ON DELETE CASCADE);</li>
+        <li>уникальные ограничения на логины и email;</li>
+        <li>NOT NULL для обязательных полей;</li>
+        <li>индексы для ускорения запросов по ключевым полям.</li>
+      </ul>
+    </section>
+    <section>
+      <title>Заключение</title>
+      <p>Разработанная структура базы данных PostgreSQL обеспечивает:</p>
+      <ul>
+        <li>надёжное хранение пользовательских данных и информации о питании;</li>
+        <li>быстрый доступ к записям за счёт индексирования;</li>
+        <li>целостность связей между сущностями;</li>
+        <li>масштабируемость для добавления новых функций (например, рецептов, тренировок);</li>
+      </ul>
+      <p>Такая архитектура соответствует требованиям проекта и готова к интеграции с бэкендом на
+        Flask.</p>
+    </section>
+    <p/>
+  </body>
+</topic>

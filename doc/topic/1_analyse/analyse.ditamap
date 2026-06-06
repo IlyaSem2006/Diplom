@@ -3,6 +3,13 @@
 <map id="ANALYSE" xml:lang="ru">
     <!--title>Анализ предметной области</title-->
     <topicref href="cc-analyse.dita">
-        <topicref navtitle="" href="cc-obzor.dita"/>
+        <topicref href="cc-abouttheme.dita"/>
+        <topicref href="cc-obzor.dita"/>
+        <topicref href="cc-entities.dita"/>
+        <topicref href="cc-process.dita"/>
+        <topicref href="cc-interlink.dita"/>
+        <topicref href="cc-problems.dita"/>
+        <topicref href="cc-requir.dita"/>
+        <topicref href="cc-analyseresume.dita"/>
     </topicref>
 </map>

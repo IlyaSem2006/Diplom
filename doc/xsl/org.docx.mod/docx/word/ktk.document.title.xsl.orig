@@ -53,22 +53,6 @@
 			</xsl:when>
 			<xsl:otherwise/>
 		</xsl:choose>
-		<w:p>
-			<w:pPr>
-				<w:pStyle w:val="Titylist12"/>
-				<!--w:spacing w:after="1700"/-->
-				<w:spacing w:after="0"/>
-			</w:pPr>
-			<w:r>
-				<w:rPr>
-					<w:sz w:val="24"/>
-					<w:szCs w:val="24"/>
-				</w:rPr>
-				<w:t>
-					<xsl:value-of select="*[contains(@id, 'orgNameTitulTL')]"/>
-				</w:t>
-			</w:r>
-		</w:p>
 		<xsl:choose>
 			<xsl:when test="*[contains(@id, 'orgRezolyucTLTL') or contains(@id, 'orgRezolyucTLTR')]">
 				<!-- Штампы верхние -->
@@ -618,8 +602,6 @@
 			</w:tr>
 		</w:tbl>
 		
-		<w:p/>
-		
 		<!-- Наименование документа -->
 		<w:p/>
 		<w:p>
@@ -640,7 +622,6 @@
 				</w:t>
 			</w:r>
 		</w:p>
-		<w:p/>
 
 		<!-- номер документа -->
 		<w:p>
@@ -661,7 +642,6 @@
 		</w:p>
 
 		<!-- Уровень образования -->
-		<w:p/>
 		<w:tbl>
 			<w:tblPr>
 				<w:tblW w:w="{$tblWidth}" w:type="dxa"/>
@@ -721,7 +701,6 @@
 		<w:p/>
 		
 		<!-- Вид ВКР -->
-		<w:p/>
 		<w:tbl>
 			<w:tblPr>
 				<w:tblW w:w="{$tblWidth}" w:type="dxa"/>
@@ -782,7 +761,6 @@
 		<w:p/>
 		
 		<!-- Тема -->
-		<w:p/>
 		<w:tbl>
 			<w:tblPr>
 				<w:tblW w:w="{$tblWidth}" w:type="dxa"/>
@@ -841,8 +819,7 @@
 				</w:tc>
 			</w:tr>
 		</w:tbl>
-		<w:p/>
-		
+
 		<!-- Нормоконтролер -->
 		<w:p/>
 		<w:tbl>
@@ -902,7 +879,6 @@
 				</w:tc>
 			</w:tr>
 		</w:tbl>
-		<w:p/>
 			
 		<!-- Руководитель -->
 		<w:p/>
@@ -963,7 +939,6 @@
 				</w:tc>
 			</w:tr>
 		</w:tbl>
-		<w:p/>
 
 		<!-- Студент -->
 		<w:p/>
@@ -1024,7 +999,6 @@
 				</w:tc>
 			</w:tr>
 		</w:tbl>
-		<w:p/>
 
 		<w:p>
 			<w:pPr>

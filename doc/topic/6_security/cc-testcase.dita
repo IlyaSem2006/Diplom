@@ -3,9 +3,9 @@
 <topic id="CC-TESTCASE" xml:lang="ru">
   <title>Сценарии тестирования</title>
   <body>
-    <p>В ниже в табличном виде приведены сценарии функционального тестирования (таблица <xref
+    <p>Ниже в табличном виде приведены сценарии функционального тестирования (таблица <xref
         href="#./table_func_tc"/>) и сценарии тестирования обработки ошибок (таблица <xref
-        href="#./table_neg_tc"/>) </p>
+        href="#./table_neg_tc"/>).</p>
     <table id="table_func_tc" conref="cc-table_testcase.dita#TABLE_TESTCASE/table_func_testcases">
       <tgroup cols="1">
         <tbody>

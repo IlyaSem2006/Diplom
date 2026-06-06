@@ -1,10 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="CC-INSTR" xml:lang="ru">
-  <title>ИНСТРУКЦИИ</title>
+  <title>ИНСТРУКЦИИ ПОЛЬЗОВАТЕЛЯ</title>
   <body>
     <p>Данный раздел содержит в себе краткие инструкции по развертыванию приложения в компьютерной
-      среде (devops) и по работе с web-интерфейсом приложения со стороны пользователя (user
-      guide).</p>
+      среде   и по работе с web-интерфейсом приложения со стороны пользователя (user guide).</p>
   </body>
 </topic>

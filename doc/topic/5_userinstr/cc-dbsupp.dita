@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="CC-DBSUPP" xml:lang="ru">
+  <title>Наполнение БД</title>
+  <body>
+    <p>Для автоматизированного добавления в базу данных новых продуктов создан python-скрипт
+        <codeph>add_more_products.py</codeph>. В скрипте прописываются продукты в соответствии со
+      структурой таблицы <codeph>products</codeph>. Например:<codeblock id="codeblock_wwv_zsm_mjc">
+additional_products = [
+    Product(name="Судак", calories_per_100g=84, protein=19.0, carbs=0.0, fat=0.8, category="Рыба и морепродукты"),
+    Product(name="Белок яичный", calories_per_100g=44, protein=11.1, carbs=0.0, fat=0.0, category="Мясо и птица"),
+    Product(name="Масло подсолнечное", calories_per_100g=899, protein=0.0, carbs=0.0, fat=99.9, category="Масла и жиры"),
+…
+]
+</codeblock>При выполнении скрипт добавит записи в таблицу <codeph>products</codeph> с
+      указанными данными.</p>
+  </body>
+</topic>

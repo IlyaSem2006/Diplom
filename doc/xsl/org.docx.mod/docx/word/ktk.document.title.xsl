@@ -684,7 +684,7 @@
 					</w:tcPr>
 					<w:p>
 						<w:pPr>
-							<w:jc w:val="center"/>
+							<w:jc w:val="left"/>
 						</w:pPr>
 						<w:r>
 							<w:rPr>
@@ -743,7 +743,7 @@
 					</w:tcPr>
 					<w:p>
 						<w:pPr>
-							<w:jc w:val="center"/>
+							<w:jc w:val="left"/>
 						</w:pPr>
 						<w:r>
 							<w:rPr>

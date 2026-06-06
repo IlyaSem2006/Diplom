@@ -7,6 +7,10 @@
     <!-- Define the tool folder in the user profile to store log and temporary files -->
     <property name="tool.dir" location="${env.APPDATA}/${ant.project.name}"/>
     <mkdir dir="${tool.dir}"/>
+    <tstamp>
+      <format property="time.stamp" pattern="yyyyMMdd_HHmm"/>
+    </tstamp>
+
 
     <!-- Папка подключаемого DTD-каталога при генерации DITA-топиков стандарта 1.3 -->
     <xmlcatalog id="dita13">
@@ -54,6 +58,8 @@
 	      <param name="fdocm" value="${basedir}/out/${product}"/>
 	    </antcall>
 
+        <!-- Добавляем штамп времени к имени выходного файла -->
+        <move file="${basedir}/out/${product}.docx" tofile="${basedir}/out/${product}_${time.stamp}.docx"/>
     </target>
     <target name="zadanie">
 		<property name="dotx.file" location="${basedir}/xsl/org.docx.mod/docx/resources/base_Normal.docx"/>
@@ -75,7 +81,8 @@
             <!--property name="processing-mode" value="strict"/-->
             <!--property name="org.dita.index.skip" value="yes"/-->
         </ant>
-
+        <!-- Добавляем штамп времени к имени выходного файла -->
+        <move file="${basedir}/out/cc_zadanie.docx" tofile="${basedir}/out/cc_zadanie_${time.stamp}.docx"/>
     </target>
 
     <target name="norm">

@@ -60,7 +60,7 @@
     <keydef keys="key_prodStudentInitials_rod">
         <topicmeta>
             <keywords>
-                <keyword>И.Д. Семенова</keyword>
+                <keyword>Семенова И.Д.</keyword>
             </keywords>
         </topicmeta>
     </keydef>
@@ -69,7 +69,7 @@
     <keydef keys="key_prodStudentInitials_imen">
         <topicmeta>
             <keywords>
-                <keyword>И.Д. Семенов</keyword>
+                <keyword>Семенов И.Д.</keyword>
             </keywords>
         </topicmeta>
     </keydef>
@@ -115,6 +115,15 @@
         <topicmeta>
             <keywords>
                 <keyword>Макаров Даниил Александрович</keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+
+    <!-- Инициалы и фаамилия руководителя дипломной работы -->
+    <keydef keys="key_prodSupervisorInitials">
+        <topicmeta>
+            <keywords>
+                <keyword>Макаров Д.А.</keyword>
             </keywords>
         </topicmeta>
     </keydef>
