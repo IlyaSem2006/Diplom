@@ -27,7 +27,7 @@
       <!-- Тип документа: Задание доработку -->
       <keyword id="prodTypeTL">ВЫПУСКНАЯ КВАЛИФИКАЦИОННАЯ РАБОТА</keyword>
       <!-- Уровень образования -->
-      <keyword id="prodEduLevelTL">основное общее</keyword>
+      <keyword id="prodEduLevelTL">среднее профессиональное</keyword>
       <!-- Вид ВКР -->
       <keyword id="prodTypeOfWorkTL">проектный</keyword>
       <!-- Тема -->
@@ -48,15 +48,16 @@
   </bookmeta>
   <frontmatter>
     <mapref href="common/cc-keys.ditamap" format="ditamap"/>
+    <topicref href="topic/0_vvedenie/cc-aktualnost.dita" toc="yes"/>
     <booklists>
       <toc navtitle="СОДЕРЖАНИЕ"/>
       <glossarylist href="common/cc-glossary.ditamap" format="ditamap"/>
     </booklists>
   </frontmatter>
 
-  <chapter>
+  <!--chapter>
     <mapref href="topic/0_vvedenie/vvedenie.ditamap" format="ditamap"/>
-  </chapter>
+  </chapter-->
   <chapter>
     <mapref href="topic/1_analyse/analyse.ditamap" format="ditamap"/>
   </chapter>
@@ -75,22 +76,23 @@
   <chapter>
     <mapref href="topic/6_security/security.ditamap" format="ditamap"/>
   </chapter>
-  <chapter>
+  <!--chapter>
     <topicref navtitle="" href="topic/cc-resume.dita"/>
   </chapter>
   <chapter>
     <topicref navtitle="" href="sprav/cc_reference_documents.dita"/>
-  </chapter>
+  </chapter-->
   
-  <appendices>
+  <!--appendices>
     <appendix keys="app_1" importance="required">
       <topicref href="appendix/cc-app_a.dita"/>
     </appendix>
-    <!--appendix keys="app_2" importance="required">
-    <topicref navtitle="Структура БД" href="common/cc-under-construction.dita"/>
-  </appendix-->
-  </appendices>
+  </appendix>
+  </appendices-->
   <backmatter>
+    <topicref navtitle="" href="topic/cc-resume.dita"/>
+    <topicref navtitle="" href="sprav/cc_reference_documents.dita"/>
+    <topicref href="appendix/cc-app_a.dita"/>
     <booklists>
       <!--booklist navtitle="Ссылочные документы" keys="bibliography"
         href="sprav/cc_reference_documents.dita"/-->
