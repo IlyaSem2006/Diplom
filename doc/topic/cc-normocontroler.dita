@@ -32,11 +32,7 @@
             <entry align="center"><b>ПЕРЕЧЕНЬ</b></entry>
           </row>
           <row>
-            <entry align="center">замечаний и предложений нормоконтролера по дипломному проекту
-              студента</entry>
-          </row>
-          <row>
-            <entry/>
+            <entry align="center">замечаний и предложений нормоконтролера по выпускной квалификационной работе студента</entry>
           </row>
           <row>
             <entry align="center" rowsep="1">группы <keyword keyref="key_prodStudentGroup"/>
@@ -62,7 +58,12 @@
         </thead>
         <tbody>
           <row rowsep="0">
-            <entry/>
+            <entry>
+              <?br?><?br?><?br?><?br?><?br?>
+              <?br?><?br?><?br?><?br?><?br?>
+              <?br?><?br?><?br?><?br?><?br?>
+              <?br?><?br?>
+            </entry>
             <entry/>
           </row>
           <row rowsep="0">
@@ -106,7 +107,7 @@
             <entry rowsep="1"/>
             <entry>Нормоконтролер</entry>
             <entry rowsep="1"/>
-            <entry rowsep="1"><i><keyword keyref="key_prodApprover"/></i></entry>
+            <entry rowsep="1"><keyword keyref="key_prodApprover"/></entry>
           </row>
           <row>
             <entry/>

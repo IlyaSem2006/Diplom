@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="CC-TITUL" xml:lang="ru">
+  <title/>
+  <body>
+    <table id="table_heading" frame="none">
+      <tgroup cols="1" colsep="0" rowsep="0">
+        <tbody>
+          <row>
+            <entry align="center"><b>МИНОБРНАУКИ РОССИИ<?br?> Казанский технологический
+                колледж<?br?> федерального государственного бюджетного образовательного
+                учреждения<?br?> высшего образования<?br?> «Казанский национальный исследовательский
+                технологический университет»<?br?> (КТК ФГБОУ ВО «КНИТУ»)</b></entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <p>&#160;</p>
+    <table id="table_stamp" frame="none">
+      <tgroup cols="4" colsep="0" rowsep="0">
+        <colspec colnum="1" colwidth="2*" colname="col1"/>
+        <colspec colnum="2" colwidth="2*" colname="col2"/>
+        <colspec colnum="3" colwidth="2*" colname="col3"/>
+        <colspec colnum="4" colwidth="3*" colname="col4"/>
+        <tbody>
+          <row>
+            <entry/>
+            <entry/>
+            <entry/>
+            <entry>
+              <p>Директор КТК</p>
+              <p>ФГБОУ ВО «КНИТУ»</p>
+              <p>&#160;</p>
+              <p>__________/М.Ф.Вахитов</p>
+              <p>«01» июня 2026 г.</p>
+            </entry>
+          </row>
+          <row>
+            <entry namest="col1" nameend="col4"/>
+          </row>
+          <row>
+            <entry namest="col1" nameend="col4">Специальность <u><keyword keyref="key_prodStudentSpeciality"/></u></entry>
+          </row>
+          <row>
+            <entry namest="col1" nameend="col4"/>
+          </row>
+          <row>
+            <entry namest="col1" nameend="col4">Группа <u><keyword keyref="key_prodStudentGroup"/></u></entry>
+          </row>
+          <row>
+            <entry namest="col1" nameend="col4"/>
+          </row>
+          <row>
+            <entry namest="col1" nameend="col4"/>
+          </row>
+          <row>
+            <entry namest="col1" nameend="col4" align="center"><b>ВЫПУСКНАЯ КВАЛИФИКАЦИОННАЯ РАБОТА</b></entry>
+          </row>
+          <row>
+            <entry namest="col1" nameend="col4"/>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <table id="table_vkr" frame="none">
+      <tgroup cols="2" colsep="0" rowsep="0">
+        <colspec colnum="1" colwidth="1*" colname="col1"/>
+        <colspec colnum="2" colwidth="7*" colname="col2"/>
+        <tbody>
+          <row>
+            <entry/>
+            <entry rowsep="0"/>
+          </row>
+          <row>
+            <entry>Вид ВКР</entry>
+            <entry rowsep="1" align="center">комбинированный</entry>
+          </row>
+          <row>
+            <entry/>
+            <entry align="center"><sup>(проектный, исследовательский, комбинированный)</sup></entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+
+    <table id="table_theme" frame="none">
+      <tgroup cols="2" colsep="0" rowsep="0">
+        <colspec colnum="1" colwidth="1*" colname="col1"/>
+        <colspec colnum="2" colwidth="9*" colname="col2"/>
+        <tbody>
+          <row>
+            <entry/>
+            <entry rowsep="0"/>
+          </row>
+          <row>
+            <entry><b>Тема</b></entry>
+            <entry rowsep="1"><keyword keyref="key_prodTheme"/></entry>
+          </row>
+          <row>
+            <entry/>
+            <entry/>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    
+    <table id="table_footer" frame="none">
+      <tgroup cols="3" colsep="0" rowsep="0">
+        <colspec colnum="1" colwidth="1*" colname="col1"/>
+        <colspec colnum="2" colwidth="1*" colname="col2"/>
+        <colspec colnum="3" colwidth="1*" colname="col3"/>
+        <tbody>
+          <row>
+            <entry/>
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry>Нормоконтролер </entry>
+            <entry rowsep="1" align="right"></entry>
+            <entry rowsep="0" align="left">(<keyword keyref="key_prodApprover"/>)</entry>
+          </row>
+          <row>
+            <entry />
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry>Руководитель </entry>
+            <entry rowsep="1" align="right"></entry>
+            <entry rowsep="0" align="left">(<keyword keyref="key_prodSupervisorInitials"/>)</entry>
+          </row>
+          <row>
+            <entry />
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry>Студент </entry>
+            <entry rowsep="1" align="right"></entry>
+            <entry rowsep="0" align="left">(<keyword keyref="key_prodStudentInitials_imen"/>)</entry>
+          </row>
+          <row>
+            <entry namest="col1" nameend="col3" align="center">
+              <?br?><?br?><?br?><?br?><?br?>
+              <?br?><?br?><?br?><?br?><?br?>
+              <?br?><?br?><?br?><?br?><?br?>
+            </entry>
+          </row>
+          <row>
+            <entry namest="col1" nameend="col3" align="center"><keyword keyref="key_prod_year"/></entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </body>
+</topic>

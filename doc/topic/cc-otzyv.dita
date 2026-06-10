@@ -10,41 +10,48 @@
             <entry align="center"><b>ОТЗЫВ</b></entry>
           </row>
           <row>
-            <entry align="center">о выпускной квалификационной работе студента</entry>
+            <entry align="center"><b>руководителя выпускной квалификационной работы (проекта)</b></entry>
           </row>
           <row>
-            <entry align="center"><keyword keyref="key_prod_KTK_abbrev"/></entry>
+            <entry align="center"/>
           </row>
           <row>
-            <entry/>
+            <entry>Тема работы (проекта): <u><keyword keyref="key_prodTheme"/></u></entry>
           </row>
           <row>
-            <entry align="center" rowsep="1"><keyword keyref="key_prodStudentFIO_rod"/></entry>
+            <entry align="center"/>
+          </row>
+          <row>
+            <entry>Автор (студент) <u><keyword keyref="key_prodStudentFIO_imen"/>
+                &#160;&#160;&#160;&#160;&#160;
+                &#160;&#160;&#160;&#160;&#160;
+                &#160;&#160;&#160;&#160;&#160;
+                &#160;&#160;&#160;&#160;&#160;
+                &#160;&#160;&#160;&#160;&#160;
+                &#160;&#160;&#160;&#160;&#160;
+            </u></entry>
           </row>
           <row>
             <entry align="center"><sup>(ФИО полностью)</sup></entry>
           </row>
           <row>
-            <entry/>
+            <entry>Группа <u><keyword keyref="key_prodStudentGroup"/></u></entry>
           </row>
           <row>
-            <entry>по выполнению выпускной квалификационной работы по специальности:</entry>
-          </row>
-          <row>
-            <entry rowsep="1"><keyword keyref="key_prodStudentSpeciality"/></entry>
+            <entry>Специальность <u><keyword keyref="key_prodStudentSpeciality"/></u></entry>
           </row>
           <row>
             <entry/>
           </row>
           <row>
-            <entry>на тему: <u>«<keyword keyref="key_prodTheme"/>»</u></entry>
+            <entry>Руководитель <u><keyword keyref="key_prodSupervisor"/></u></entry>
           </row>
           <row>
             <entry/>
           </row>
           <row>
             <entry>Выпускная квалификационная работа выполнена в соответствии с заданием и состоит
-              из пояснительной записки, изложенной на ___ страницах печатного
+              из пояснительной записки, изложенной на <u>46</u> страницах печатного
               текста<!-- и графической части
               на ___ листах-->.</entry>
           </row>
@@ -52,15 +59,12 @@
             <entry/>
           </row>
           <row>
-            <entry><b>Оценка соответствия требованиям ФГОС подготовленности автора выпускной
-                квалификационной работы</b></entry>
+            <entry align="center">Оценка соответствия требованиям ФГОС подготовленности автора выпускной
+                квалификационной работы</entry>
           </row>
         </tbody>
       </tgroup>
     </table>
-    <p>&#160;</p>
-    <p/>
-    <p/>
 
     <table id="table_scoring" frame="all">
       <tgroup cols="4" colsep="1" rowsep="1">
@@ -191,34 +195,10 @@
             <entry rowsep="1"/>
           </row>
           <row>
-            <entry rowsep="1"/>
-          </row>
-          <row>
-            <entry rowsep="1"/>
-          </row>
-          <row>
-            <entry rowsep="1"/>
-          </row>
-          <row>
-            <entry rowsep="1"/>
-          </row>
-          <row>
             <entry rowsep="0"/>
           </row>
           <row>
             <entry rowsep="1">Недостатки выпускной квалификационной работы</entry>
-          </row>
-          <row>
-            <entry rowsep="1"/>
-          </row>
-          <row>
-            <entry rowsep="1"/>
-          </row>
-          <row>
-            <entry rowsep="1"/>
-          </row>
-          <row>
-            <entry rowsep="1"/>
           </row>
           <row>
             <entry rowsep="1"/>
@@ -256,18 +236,6 @@
           <row>
             <entry rowsep="1"/>
           </row>
-          <row>
-            <entry rowsep="1"/>
-          </row>
-          <row>
-            <entry rowsep="1"/>
-          </row>
-          <row>
-            <entry rowsep="1"/>
-          </row>
-          <row>
-            <entry rowsep="1"/>
-          </row>
         </tbody>
       </tgroup>
     </table>
@@ -288,7 +256,7 @@
           <row>
             <entry>Руководитель:</entry>
             <entry rowsep="1" align="right">/</entry>
-            <entry rowsep="1" align="center"><i><keyword keyref="key_prodSupervisor"/></i></entry>
+            <entry rowsep="1" align="center"><keyword keyref="key_prodSupervisorInitials"/></entry>
             <entry rowsep="0" align="left">/</entry>
           </row>
           <row>
@@ -301,7 +269,7 @@
             <entry namest="col1" nameend="col4"><keyword keyref="key_prod_dateblank"/><keyword
                 keyref="key_prod_year"/></entry>
           </row>
-          <row>
+          <!--row>
             <entry/>
             <entry/>
             <entry/>
@@ -310,10 +278,10 @@
           <row>
             <entry>С отзывом ознакомлен:</entry>
             <entry rowsep="1" align="right">/</entry>
-            <entry rowsep="1" align="center"><i><keyword keyref="key_prodStudentInitials_imen"
-              /></i></entry>
+            <entry rowsep="1" align="center"><keyword keyref="key_prodStudentInitials_imen"
+              /></entry>
             <entry rowsep="0" align="left">/</entry>
-          </row>
+          </row-->
         </tbody>
       </tgroup>
     </table>

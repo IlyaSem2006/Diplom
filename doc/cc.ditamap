@@ -1,63 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd">
 <bookmap id="CC" xml:lang="ru">
-  <booktitle>
-    <mainbooktitle>
-      <!-- Шапка многострочная -->
-      <keyword id="orgNameFullTL1">МИНОБРНАУКИ РОССИИ</keyword>
-      <keyword id="orgNameFullTL2" keyref="key_prod_KTK_Name"/>
-      <keyword id="orgNameFullTL3">федерального государственного бюджетного образовательного
-        учреждения</keyword>
-      <keyword id="orgNameFullTL4">высшего образования</keyword>
-      <keyword id="orgNameFullTL5">«Казанский национальный исследовательский технологический
-        университет»</keyword>
-      <keyword id="orgNameFullTL6">(КТК ФГБОУ ВО «КНИТУ»)</keyword>
-      <!-- Верхний левый штамп -->
-      <keyword id="orgRezolyucTLTL">Допустить к защите</keyword>
-      <!-- Верхний правый штамп -->
-      <keyword id="orgRezolyucTLTR"/>
-      <keyword id="orgDolzhnostTLTR1">Директор КТК</keyword>
-      <keyword id="orgDolzhnostTLTR2">ФГБОУ ВО «КНИТУ»</keyword>
-      <keyword id="orgFIOTLTR">___________/М.Ф. Вахитов</keyword>
-      <keyword id="orgDataTLTR">«___» __________2026 г.</keyword>
-      <!-- Специальность -->
-      <keyword id="prodStudentSpecialityTL" keyref="key_prodStudentSpeciality"/>
-      <!-- Группа -->
-      <keyword id="prodStudentGroupTL" keyref="key_prodStudentGroup"/>
-      <!-- Тип документа: Задание доработку -->
-      <keyword id="prodTypeTL">ВЫПУСКНАЯ КВАЛИФИКАЦИОННАЯ РАБОТА</keyword>
-      <!-- Уровень образования -->
-      <keyword id="prodEduLevelTL">среднее профессиональное</keyword>
-      <!-- Вид ВКР -->
-      <keyword id="prodTypeOfWorkTL">проектный</keyword>
-      <!-- Тема -->
-      <keyword id="prodThemeTL" keyref="key_prodTheme"/>
-      <!-- Нормоконтролер -->
-      <keyword id="prodApproverTL" keyref="key_prodApprover"/>
-      <!-- Руководитель -->
-      <keyword id="prodSupervisorTL" keyref="key_prodSupervisor"/>
-      <!-- Студент -->
-      <keyword id="prodStudentFIOTL" keyref="key_prodStudentFIO_imen"/>
-      <!-- Год выпуска -->
-      <keyword id="yearTL" keyref="key_prod_year"/>
-    </mainbooktitle>
-
-  </booktitle>
   <bookmeta>
     <author type="creator" xml:lang="ru">И.Д. Семенов</author>
   </bookmeta>
   <frontmatter>
     <mapref href="common/cc-keys.ditamap" format="ditamap"/>
-    <topicref href="topic/0_vvedenie/cc-aktualnost.dita" toc="yes"/>
+    <topicref href="topic/cc-titul.dita" toc="no"/>
+    <topicref href="concept/cc-zadanie.dita" toc="no"/>
+    <topicref href="topic/cc-normocontroler.dita" toc="no"/>
+    <topicref href="topic/cc-otzyv.dita" toc="no"/>
     <booklists>
       <toc navtitle="СОДЕРЖАНИЕ"/>
       <glossarylist href="common/cc-glossary.ditamap" format="ditamap"/>
     </booklists>
+    <topicref href="topic/0_vvedenie/cc-aktualnost.dita" toc="yes" />
   </frontmatter>
 
-  <!--chapter>
-    <mapref href="topic/0_vvedenie/vvedenie.ditamap" format="ditamap"/>
-  </chapter-->
   <chapter>
     <mapref href="topic/1_analyse/analyse.ditamap" format="ditamap"/>
   </chapter>
@@ -76,27 +35,14 @@
   <chapter>
     <mapref href="topic/6_security/security.ditamap" format="ditamap"/>
   </chapter>
-  <!--chapter>
-    <topicref navtitle="" href="topic/cc-resume.dita"/>
-  </chapter>
-  <chapter>
-    <topicref navtitle="" href="sprav/cc_reference_documents.dita"/>
-  </chapter-->
-  
-  <!--appendices>
-    <appendix keys="app_1" importance="required">
-      <topicref href="appendix/cc-app_a.dita"/>
-    </appendix>
-  </appendix>
-  </appendices-->
   <backmatter>
     <topicref navtitle="" href="topic/cc-resume.dita"/>
-    <topicref navtitle="" href="sprav/cc_reference_documents.dita"/>
-    <topicref href="appendix/cc-app_a.dita"/>
+    <!--topicref navtitle="" href="sprav/cc_reference_documents.dita"/-->
     <booklists>
-      <!--booklist navtitle="Ссылочные документы" keys="bibliography"
-        href="sprav/cc_reference_documents.dita"/-->
+      <booklist navtitle="Ссылочные документы" keys="bibliography"
+        href="sprav/cc_reference_documents.dita"/>
       <!--glossarylist href="common/cc-glossary.ditamap" format="ditamap"/-->
     </booklists>
+    <topicref href="appendix/cc-app_a.dita"/>
   </backmatter>
 </bookmap>

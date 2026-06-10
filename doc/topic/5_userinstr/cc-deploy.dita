@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA General Task//EN" "generaltask.dtd">
 <task id="CC-CEL" xml:lang="ru">
-  <title>Инструкция по развертыванию приложения</title>
+  <title>Инструкция системного администратора</title>
   <taskbody>
     <section>
       <p>Приложение может быть развернуто на локальном компьютере или в облачном сервисе, если они
@@ -10,12 +10,12 @@
           <li>Поддержка приложений Python.</li>
           <li>Возможность установки дополнительных библиотек Python:
             <ul>
-              <li>Flask версии 3.0.3</li>
-              <li>Flask-SQLAlchemy версии 3.1.1</li>
-              <li>psycopg[binary] версии 3.2.9</li>
-              <li>gunicorn версии 22.0.0</li>
-              <li>python-dotenv версии 1.0.1</li>
-              <li>Werkzeug версии не ниже 3.0.0</li>
+              <li>Flask версии 3.0.3;</li>
+              <li>Flask-SQLAlchemy версии 3.1.1;</li>
+              <li>psycopg[binary] версии 3.2.9;</li>
+              <li>gunicorn версии 22.0.0;</li>
+              <li>python-dotenv версии 1.0.1;</li>
+              <li>Werkzeug версии не ниже 3.0.0.</li>
             </ul>
           </li>
         </ul>

@@ -166,7 +166,7 @@
         <p>Модульность. Возможность использовать отдельные компоненты по необходимости.</p>
       </li>
     </ul>
-    <p>Итоговый вывод</p>
+    <p><b>Итоговый вывод</b></p>
     <p>Предложенный стек технологий (Flask + PostgreSQL + Flask‑SQLAlchemy + psycopg2 + Gunicorn +
       python‑dotenv + Werkzeug) обеспечивает:</p>
     <ul id="ul_ujd_zhc_ljc">

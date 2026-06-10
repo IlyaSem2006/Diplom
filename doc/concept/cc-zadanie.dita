@@ -19,6 +19,10 @@
             <entry align="left"></entry>
             <entry align="left">«УТВЕРЖДАЮ»</entry>
           </row>
+          <row>
+            <entry align="left"></entry>
+            <entry align="left">Зам. директора по УР</entry>
+          </row>
         </tbody>
       </tgroup>
     </table>
@@ -35,8 +39,8 @@
           </row>
           <row>
             <entry></entry>
-            <entry>Директор КТК </entry>
             <entry rowsep="1"/>
+            <entry>/ Газизов Р.А.</entry>
           </row>
           <row>
             <entry/>
@@ -45,7 +49,7 @@
           </row>
           <row>
             <entry></entry>
-            <entry namest="col2"  nameend="col3"><keyword keyref="key_prod_dateblank"/><keyword keyref="key_prod_year"/></entry>
+            <entry namest="col2"  nameend="col3">«19» февраля 2026 г.</entry>
           </row>
         </tbody>
       </tgroup>
@@ -64,7 +68,7 @@
           </row>
           <row>
             <entry align="left">Специальность </entry>
-            <entry align="left" rowsep="1"><i><keyword keyref="key_prodStudentSpeciality"/></i></entry>
+            <entry align="left" rowsep="1"><keyword keyref="key_prodStudentSpeciality"/></entry>
             <entry/>
           </row>
         </tbody>
@@ -84,7 +88,7 @@
           </row>
           <row>
             <entry align="left">Группа </entry>
-            <entry align="left" rowsep="1"><i><keyword keyref="key_prodStudentGroup"/></i></entry>
+            <entry align="left" rowsep="1"><keyword keyref="key_prodStudentGroup"/></entry>
             <entry/>
           </row>
           <row>
@@ -107,7 +111,7 @@
           </row>
           <row>
             <entry>На выпускную квалификационную работу студента </entry>
-            <entry rowsep="1"><i><keyword keyref="key_prodStudentFIO_rod"/></i></entry>
+            <entry rowsep="1"><keyword keyref="key_prodStudentFIO_rod"/></entry>
           </row>
         </tbody>
       </tgroup>
@@ -123,11 +127,11 @@
           </row>
           <row>
             <entry>Тема </entry>
-            <entry rowsep="1"><i><keyword keyref="key_prodTheme"/></i></entry>
+            <entry rowsep="1"><keyword keyref="key_prodTheme"/></entry>
           </row>
           <row>
-            <entry rowsep="1"/>
-            <entry rowsep="1"/>
+            <entry rowsep="0"/>
+            <entry rowsep="0"/>
           </row>
           <row>
             <entry/>
@@ -155,9 +159,7 @@
           <row>
             <entry namest="col1" nameend="col2">
               <u>
-                <i>
                   <text conref="../topic/2_techzadanie/cc-cel.dita#CC-CEL/text_projectgoal"/>
-                </i>
               </u>
             </entry>
           </row>
@@ -189,7 +191,7 @@
       </tgroup>
     </table>
     
-    <!--table id="table_Grapth" frame="none" >
+    <table id="table_Grapth" frame="none" >
       <tgroup cols="2" colsep="0" rowsep="0">
         <colspec colnum="1" colwidth="12.25*" colname="col1"/>
         <colspec colnum="2" colwidth="4.25*" colname="col2"/>
@@ -216,7 +218,7 @@
           </row>
         </tbody>
       </tgroup>
-    </table-->
+    </table>
     
     <table id="table_Consul" frame="none" >
       <tgroup cols="2" colsep="0" rowsep="0">
@@ -259,7 +261,7 @@
             <entry/>
           </row>
           <row>
-            <entry namest="col1" nameend="col3">Дата выдачи задания <keyword keyref="key_prod_dateblank"/><keyword keyref="key_prod_year"/></entry>
+            <entry namest="col1" nameend="col3">Дата выдачи задания «27» марта 2026 г.</entry>
           </row>
           <row>
             <entry/>
@@ -269,7 +271,7 @@
           <row>
             <entry>Руководитель</entry>
             <entry rowsep="1" align="right"></entry>
-            <entry rowsep="1" align="right">(<keyword keyref="key_prodSupervisorInitials"/>)</entry>
+            <entry rowsep="0" align="left">(<keyword keyref="key_prodSupervisorInitials"/>)</entry>
           </row>
           <row>
             <entry/>
@@ -279,7 +281,7 @@
           <row>
             <entry>Задание принял к исполнению</entry>
             <entry rowsep="1" align="right"></entry>
-            <entry rowsep="1" align="right">(<keyword keyref="key_prodStudentInitials_imen"/>)</entry>
+            <entry rowsep="0" align="left">(<keyword keyref="key_prodStudentInitials_imen"/>)</entry>
           </row>
         </tbody>
       </tgroup>
