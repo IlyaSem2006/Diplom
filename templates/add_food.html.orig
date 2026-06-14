@@ -83,25 +83,8 @@
                                                 <label class="modern-label">
                                                     <i class="fas fa-apple-alt label-icon"></i> Название продукта *
                                                 </label>
-												<input id="input-prod" list="prodlist" class="modern-select product-select product-input" name="product_id[]" required>
-												<datalist id="prodlist">
+                                                <select class="modern-select product-select" name="product_id[]" required>
                                                     <option value="">Выберите продукт</option>
-                                                    {% for product in products %}
-                                                    <option value="{{ product.id }}"
-                                                            id="{{ product.id }}"
-                                                            data-name="{{ product.name }}"
-                                                            data-calories="{{ product.calories_per_100g }}"
-                                                            data-protein="{{ product.protein }}"
-                                                            data-fat="{{ product.fat }}"
-                                                            data-carbs="{{ product.carbs }}"
-                                                            data-category="{{ product.category }}"
-                                                            {% if selected_product_id == product.id %}selected{% endif %}>
-                                                        {{ product.name }} ({{ product.category }})
-                                                    </option>
-                                                    {% endfor %}
-												</datalist>
-                                                <!--select hidden class="modern-select product-select" name="product_id[]" required>
-                                                    <option value="43">Выберите продукт</option>
                                                     {% for product in products %}
                                                     <option value="{{ product.id }}" 
                                                             data-calories="{{ product.calories_per_100g }}"
@@ -113,7 +96,7 @@
                                                         {{ product.name }} ({{ product.category }})
                                                     </option>
                                                     {% endfor %}
-                                                </select-->
+                                                </select>
                                             </div>
                                             
                                             <div class="col-lg-5 mb-3">
@@ -754,11 +737,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Добавляем обработчики для первого продукта
     attachProductRowHandlers(document.querySelector('.product-item'));
-
+    
     // Добавляем глобальные обработчики для отслеживания изменений
     document.addEventListener('change', function(e) {
-        if (e.target.matches('.product-select') || e.target.matches('.weight-input') || e.target.matches('.product-input')) {
-			updateSubmitButton();
+        if (e.target.matches('.product-select') || e.target.matches('.weight-input')) {
+            updateSubmitButton();
         }
     });
     
@@ -767,7 +750,6 @@ document.addEventListener('DOMContentLoaded', function() {
             updateSubmitButton();
         }
     });
-
 });
 
 function addProductRow() {
@@ -782,13 +764,11 @@ function addProductRow() {
     
     // Очищаем значения в клонированной строке
     const productSelect = clonedRow.querySelector('.product-select');
-    const productInput = clonedRow.querySelector('.product-input');
     const weightInput = clonedRow.querySelector('.weight-input');
     const nutritionPreview = clonedRow.querySelector('.nutrition-preview');
     const productNumber = clonedRow.querySelector('.product-number');
     
     productSelect.selectedIndex = 0; // Сбрасываем на "Выберите продукт"
-    productInput.value = '';
     weightInput.value = '';
     nutritionPreview.style.display = 'none';
     productNumber.textContent = productRowIndex + 1;
@@ -840,7 +820,6 @@ function updateDeleteButtons() {
 
 function attachProductRowHandlers(row) {
     const productSelect = row.querySelector('.product-select');
-    const productInput = row.querySelector('.product-input');
     const weightInput = row.querySelector('.weight-input');
     const nutritionPreview = row.querySelector('.nutrition-preview');
     
@@ -879,17 +858,13 @@ function updateTotalNutrition() {
     let totalProtein = 0;
     let totalFat = 0;
     let totalCarbs = 0;
-
+    
     document.querySelectorAll('.product-item').forEach(row => {
-
         const productSelect = row.querySelector('.product-select');
         const weightInput = row.querySelector('.weight-input');
-        //const selectedOption = productSelect.options[productSelect.selectedIndex];
-//		const selectedProdValue = document.getElementById('input-prod').value;
-//		const selectedProdId = document.getElementById('prodlist').namedItem(selectedProdName).getAttribute('data-id');
-        const selectedOption = productSelect.value;
+        const selectedOption = productSelect.options[productSelect.selectedIndex];
         const weight = parseFloat(weightInput.value) || 0;
-
+        
         if (selectedOption.value && weight > 0) {
             const calories = parseFloat(selectedOption.dataset.calories) || 0;
             const protein = parseFloat(selectedOption.dataset.protein) || 0;
@@ -904,7 +879,6 @@ function updateTotalNutrition() {
             totalCarbs += carbs * factor;
         }
     });
-
     
     const totalNutrition = document.getElementById('total-nutrition');
     
@@ -936,14 +910,11 @@ function updateSubmitButton() {
     const submitBtn = document.getElementById('submit-btn');
     
     submitBtn.disabled = validProducts === 0;
-
     
     if (validProducts === 0) {
         submitBtn.innerHTML = '<i class="fas fa-plus"></i> Добавить 0 продуктов в дневник';
     } else if (validProducts === 1) {
-//		alert('ALERT');
         submitBtn.innerHTML = '<i class="fas fa-plus"></i> Добавить 1 продукт в дневник';
-//		alert(document.getElementById('prodlist').options(document.getElementById('input-prod').value).getAttribute('data-name'))
     } else {
         submitBtn.innerHTML = `<i class="fas fa-plus"></i> Добавить ${validProducts} продуктов в дневник`;
     }
